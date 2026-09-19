@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epic Claimer - Reclama tus juegos gratis en Android</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #0d0f17; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
+    .neon-border { box-shadow: 0 0 25px rgba(124, 58, 237, 0.25); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+  <!-- Navbar -->
+  <header class="border-b border-gray-800 bg-[#131722]/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg">
+          <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <span class="font-black text-xl tracking-wide bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Epic Claimer</span>
+      </div>
+      <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 text-sm bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-xl transition font-medium">
+        <i class="fa-brands fa-github"></i> Repositorio
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-semibold mb-6">
+      <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+      En desarrollo activo (Versión 1.0 muy pronto)
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight max-w-3xl mx-auto mb-6">
+      Reclama tus juegos gratis de Epic Games <span class="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">desde tu Android</span>
+    </h1>
+
+    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+      Olvídate de abrir el navegador o prender la PC. Recibe recordatorios semanales y reclama cada regalo con un solo toque directo desde tu teléfono.
+    </p>
+
+    <!-- Botón temporal -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+      <button disabled class="opacity-60 cursor-not-allowed flex items-center gap-3 bg-violet-600 px-6 py-3.5 rounded-xl font-semibold shadow-lg text-white">
+        <i class="fa-brands fa-android text-xl"></i>
+        Descargar APK (Próximamente)
+      </button>
+      <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 border border-gray-700 hover:border-gray-500 px-6 py-3.5 rounded-xl font-semibold transition text-gray-300">
+        <i class="fa-solid fa-star text-yellow-500"></i> Dar Star en GitHub
+      </a>
+    </div>
+
+    <!-- Características clave -->
+    <div class="grid md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
+        <div class="w-10 h-10 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center mb-4 text-lg">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Reclamo en 1 Toque</h3>
+        <p class="text-sm text-gray-400">Automatiza la confirmación de la orden sin pasar por pasarelas pesadas.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
+        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4 text-lg">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Seguro y Privado</h3>
+        <p class="text-sm text-gray-400">Tu inicio de sesión se realiza directamente en Epic Games. No guardamos tus contraseñas.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
+        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 text-lg">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Notificaciones</h3>
+        <p class="text-sm text-gray-400">Alerta semanal cada jueves justo en el momento en que se liberan nuevos títulos.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800/80 py-8 text-center text-xs text-gray-500">
+    <p class="mb-2">Epic Claimer es un proyecto de código abierto y no está afiliado con Epic Games, Inc.</p>
+    <p>© 2026 RogzcaMX. Licencia de código abierto.</p>
+  </footer>
+</body>
+</html>
