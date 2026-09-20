@@ -1,90 +1,280 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epic Claimer - Reclama tus juegos gratis en Android</title>
+  <title>Epic-Claim | Reclama tus juegos gratis de Epic Games en Android</title>
+  <meta name="description" content="Reclama los juegos gratis semanales de Epic Games en segundos desde tu Android. Soporte multicuenta instantáneo, historial cifrado y alertas los jueves.">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            surface: {
+              bg: '#0b0f19',
+              card: '#131926',
+              border: '#1f293d',
+              highlight: '#1a2234'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { background-color: #0d0f17; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
-    .neon-border { box-shadow: 0 0 25px rgba(124, 58, 237, 0.25); }
+    body { background-color: #0b0f19; color: #f1f5f9; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .glow-purple { box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25); }
+    details > summary::-webkit-details-marker { display: none; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
-  <!-- Navbar -->
-  <header class="border-b border-gray-800 bg-[#131722]/80 backdrop-blur sticky top-0 z-50">
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+  <!-- Encabezado / Barra de Navegación -->
+  <header class="border-b border-surface-border bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg">
-          <i class="fa-solid fa-gamepad"></i>
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
+          <i class="fa-solid fa-gamepad text-lg"></i>
         </div>
-        <span class="font-black text-xl tracking-wide bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Epic Claimer</span>
+        <div>
+          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
+          <span class="block text-[10px] text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
+        </div>
       </div>
-      <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 text-sm bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-xl transition font-medium">
-        <i class="fa-brands fa-github"></i> Repositorio
-      </a>
+      
+      <div class="flex items-center gap-3">
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:flex items-center gap-2 text-xs bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3.5 py-2 rounded-xl transition font-semibold">
+          <i class="fa-solid fa-mug-hot"></i> Ko-Fi
+        </a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 text-xs bg-surface-card hover:bg-surface-highlight border border-surface-border px-4 py-2 rounded-xl transition font-medium text-slate-200">
+          <i class="fa-brands fa-github text-sm"></i> <span class="hidden xs:inline">GitHub</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="max-w-5xl mx-auto px-6 py-16 text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-semibold mb-6">
-      <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-      En desarrollo activo (Versión 1.0 muy pronto)
-    </div>
-
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight max-w-3xl mx-auto mb-6">
-      Reclama tus juegos gratis de Epic Games <span class="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">desde tu Android</span>
-    </h1>
-
-    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-      Olvídate de abrir el navegador o prender la PC. Recibe recordatorios semanales y reclama cada regalo con un solo toque directo desde tu teléfono.
-    </p>
-
-    <!-- Botón temporal -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-      <button disabled class="opacity-60 cursor-not-allowed flex items-center gap-3 bg-violet-600 px-6 py-3.5 rounded-xl font-semibold shadow-lg text-white">
-        <i class="fa-brands fa-android text-xl"></i>
-        Descargar APK (Próximamente)
-      </button>
-      <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 border border-gray-700 hover:border-gray-500 px-6 py-3.5 rounded-xl font-semibold transition text-gray-300">
-        <i class="fa-solid fa-star text-yellow-500"></i> Dar Star en GitHub
-      </a>
-    </div>
-
-    <!-- Características clave -->
-    <div class="grid md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
-      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
-        <div class="w-10 h-10 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center mb-4 text-lg">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <h3 class="font-bold text-lg mb-2">Reclamo en 1 Toque</h3>
-        <p class="text-sm text-gray-400">Automatiza la confirmación de la orden sin pasar por pasarelas pesadas.</p>
+  <!-- Hero Principal -->
+  <main class="flex-grow">
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center">
+      <!-- Badge de Versión -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Versión 1.0 «Archikós» disponible
       </div>
 
-      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
-        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4 text-lg">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <h3 class="font-bold text-lg mb-2">Seguro y Privado</h3>
-        <p class="text-sm text-gray-400">Tu inicio de sesión se realiza directamente en Epic Games. No guardamos tus contraseñas.</p>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
+        Reclama los juegos gratis de Epic Games <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">en solo 2 o 3 toques</span>
+      </h1>
+
+      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        Diseñada para quienes tienen varias cuentas y les da flojera iniciar y cerrar sesión constantemente. Consulta los títulos activos, alterna perfiles y canjea rápido directo desde tu teléfono Android.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <a href="https://github.com/RogzcaMX/Epic-Claim/releases" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-bold transition shadow-lg shadow-indigo-600/30 text-sm">
+          <i class="fa-brands fa-android text-lg"></i>
+          Descargar APK (GitHub Releases)
+        </a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-surface-border bg-surface-card hover:bg-surface-highlight px-6 py-3.5 rounded-xl font-semibold transition text-slate-300 text-sm">
+          <i class="fa-solid fa-star text-amber-400"></i> Repositorio y Código
+        </a>
       </div>
 
-      <div class="p-6 rounded-2xl bg-[#131722] border border-gray-800">
-        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 text-lg">
-          <i class="fa-solid fa-bell"></i>
+      <!-- Métricas / Puntos Rápidos -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-y border-surface-border py-6 text-slate-400 text-xs">
+        <div>
+          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-users text-indigo-400 mr-1"></i> Ilimitado</span>
+          Soporte multicuenta
         </div>
-        <h3 class="font-bold text-lg mb-2">Notificaciones</h3>
-        <p class="text-sm text-gray-400">Alerta semanal cada jueves justo en el momento en que se liberan nuevos títulos.</p>
+        <div>
+          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-lock text-emerald-400 mr-1"></i> AES-256</span>
+          Cifrado local seguro
+        </div>
+        <div>
+          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-cloud-slash text-blue-400 mr-1"></i> 0 Servidores</span>
+          Privacidad total en tu móvil
+        </div>
+        <div>
+          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-bell text-amber-400 mr-1"></i> Jueves</span>
+          Aviso de reseteo semanal
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Características Reales del Código -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">Funciones pensadas para no perder tiempo</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">Todo lo que necesitas para no perderte ningún regalo semanal sin lidiar con navegadores pesados ni contraseñas a cada rato.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1: Multicuenta -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Multicuenta Instantáneo</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Agrega todas tus cuentas de Epic Games. Alterna entre ellas con un solo toque desde la barra superior sin tener que cerrar e iniciar sesión.
+          </p>
+        </div>
+
+        <!-- Card 2: Canje Asistido -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Canje en 2 Toques</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Abre directo la pasarela de compra de costo $0 con tu sesión pre-cargada. Confirma el pedido y márcalo en la barra integrada con un toque.
+          </p>
+        </div>
+
+        <!-- Card 3: Historial por Cuenta -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Historial Independiente</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Registro por fecha y hora de cada reclamo en cada perfil con buscador en tiempo real e insignias de "En biblioteca" para evitar repetidos.
+          </p>
+        </div>
+
+        <!-- Card 4: Seguridad Local -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">100% Local y Cifrado</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            No hay bases de datos externas ni servidores del creador. Tus sesiones se guardan de forma cifrada en tu dispositivo usando <em>EncryptedSharedPreferences</em>.
+          </p>
+        </div>
+
+        <!-- Card 5: Notificaciones -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Avisos Personalizados</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Segundo plano con <em>WorkManager</em>. Recibe la alerta los jueves tras el reseteo oficial (15:00 UTC), cada 24 horas o en tu día y hora favoritos.
+          </p>
+        </div>
+
+        <!-- Card 6: Personalización -->
+        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-5 text-xl">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Tema y Multiidioma</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Soporte nativo en Español e Inglés, modo oscuro manual, según el sistema o programado por horarios, además de herramientas de limpieza de caché.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes (Acordeón) -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-2">Preguntas Frecuentes</h2>
+        <p class="text-slate-400 text-sm">Respuestas claras y directas sobre el funcionamiento de la app.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="group bg-surface-card border border-surface-border rounded-2xl overflow-hidden p-5 transition">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+            <span>¿Por qué la app no reclama los juegos de forma 100% automática sin tocar nada?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+            Epic Games cuenta con protecciones anti-bot (hCaptcha) y una pasarela de pago que requiere confirmación expresa de la cuenta para evitar abusos automatizados. Epic-Claim te ahorra todo el trámite de navegación e inicio de sesión para que sólo tengas que presionar confirmar.
+          </p>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-surface-card border border-surface-border rounded-2xl overflow-hidden p-5 transition">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+            <span>¿El desarrollador puede ver mis contraseñas o datos de inicio de sesión?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+            Para nada. La aplicación no cuenta con servidores, analíticas invasivas ni bases de datos remotas. El inicio de sesión se realiza mediante un WebView seguro contra los servidores de Epic Games y las cookies resultantes se quedan cifradas únicamente en tu teléfono.
+          </p>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-surface-card border border-surface-border rounded-2xl overflow-hidden p-5 transition">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+            <span>¿Por qué me pide renovar sesión después de unos días?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+            Epic Games invalida sus cookies de sesión periódicamente por motivos de seguridad. Cuando esto sucede, puedes usar la opción <strong>Reiniciar sesión de Cuenta</strong> desde el menú de cuentas para actualizar las credenciales sin perder el historial registrado.
+          </p>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-surface-card border border-surface-border rounded-2xl overflow-hidden p-5 transition">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+            <span>¿Cómo funciona el marcado y la tarjeta de "En biblioteca"?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+            Se alimenta del registro local que realizas en la barra inferior al canjear. Consultar la biblioteca privada completa del usuario requeriría las APIs de pago de Epic Games, por lo que el marcado local mantiene la aplicación gratuita, ligera e independiente.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Sección de Apoyo Ko-Fi -->
+    <section class="max-w-4xl mx-auto px-6 pb-16">
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-surface-card to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-1">¿Te resulta útil el proyecto?</h3>
+          <p class="text-sm text-slate-400">Epic-Claim es un proyecto personal y de código abierto. Si quieres apoyar su mantenimiento, puedes invitarme un café.</p>
+        </div>
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-3 rounded-xl font-bold text-sm transition">
+          <i class="fa-solid fa-mug-hot"></i> Apoyar en Ko-Fi
+        </a>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-800/80 py-8 text-center text-xs text-gray-500">
-    <p class="mb-2">Epic Claimer es un proyecto de código abierto y no está afiliado con Epic Games, Inc.</p>
-    <p>© 2026 RogzcaMX. Licencia de código abierto.</p>
+  <footer class="border-t border-surface-border py-10 bg-[#090c14] text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-semibold text-slate-400">Epic-Claim — Creado por Rogzca</p>
+        <p class="mt-1">Desarrollado con asistencia de Gemini AI. Proyecto para uso personal y de código abierto.</p>
+        <p class="mt-1">No afiliado ni respaldado por Epic Games, Inc.</p>
+      </div>
+      
+      <div class="flex flex-col sm:items-end gap-2">
+        <div class="flex gap-4">
+          <a href="mailto:soporte_rogzca@yahoo.com" class="hover:text-slate-300 transition"><i class="fa-solid fa-envelope mr-1"></i> Soporte</a>
+          <a href="mailto:feedback_rogzca@yahoo.com" class="hover:text-slate-300 transition"><i class="fa-solid fa-comment-dots mr-1"></i> Feedback</a>
+          <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hover:text-slate-300 transition"><i class="fa-brands fa-github mr-1"></i> GitHub</a>
+        </div>
+        <span class="text-slate-600">Versión 1.0 «Archikós»</span>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
