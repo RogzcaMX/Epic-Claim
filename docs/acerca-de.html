@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca De | Epic-Claim</title>
+  <meta name="description" content="Conoce la historia detrás de Epic-Claim, su filosofía de uso personal y cómo fue desarrollada con IA por Rogzca.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#6366f1', 600: '#4f46e5' },
+            surface: { bg: '#0b0f19', card: '#131926', border: '#1f293d', highlight: '#1a2234' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0b0f19; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navbar -->
+  <header class="border-b border-surface-border bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md">
+          <i class="fa-solid fa-gamepad text-base"></i>
+        </div>
+        <span class="font-black text-lg tracking-tight text-white">Epic-Claim</span>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="flex items-center gap-4 text-xs font-semibold">
+        <a href="index.html" class="text-slate-400 hover:text-white transition">Inicio</a>
+        <a href="faq.html" class="text-slate-400 hover:text-white transition">FAQ</a>
+        <a href="acerca-de.html" class="text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Acerca De</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+    <!-- Encabezado -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-3">
+        Versión 1.0 «Archikós»
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">Detrás del Proyecto</h1>
+      <p class="text-slate-400 text-base max-w-xl mx-auto">
+        Desarrollado por <span class="text-slate-200 font-bold">Rogzca Developer</span> con asistencia de <span class="text-indigo-400 font-bold">Gemini AI</span>.
+      </p>
+    </div>
+
+    <div class="space-y-8 text-slate-300">
+      <!-- 1. El Origen y la Filosofía -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white">¿Cómo y por qué nació Epic-Claim?</h2>
+        </div>
+        <p class="text-sm leading-relaxed mb-4 text-slate-300">
+          Un día, mientras canjeaba los juegos semanales, me cruzó un pensamiento claro: <em>"¿Habrá una manera de evitarme todo este hastío de tener que iniciar y cerrar sesión a cada rato?"</em>.
+        </p>
+        <p class="text-sm leading-relaxed mb-4 text-slate-300">
+          Simplemente fue creada para que a las personas flojas, como su creador, se les haga más sencillo y menos tedioso canjear los juegos regalados por Epic Games. Sobre todo para quienes administramos varias cuentas y nos da pereza andar cambiando de sesión manualmente en el navegador.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-400 border-l-2 border-indigo-500 pl-4 italic">
+          "¿Esto me hace desarrollador? Claro que no. Mi tarea fue darle forma a la aplicación, pensar las características, guiar a Gemini durante el proceso, probarla en tiempo real y corregir fallos sobre la marcha. Aunque al menos aprendí bastante en el camino."
+        </p>
+      </div>
+
+      <!-- 2. Declaración de Uso Personal y Legalidad -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white">Uso Personal y Compromiso Ético</h2>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <span><strong>Uso personal y gratuito:</strong> Creado sin fines de lucro. Queda estrictamente prohibida la venta o reproducción comercial de esta app.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <span><strong>No es una herramienta de hackeo:</strong> La app no vulnera los sistemas ni elude pagos de Epic Games. Solo facilita la navegación directa a ofertas oficiales de costo $0.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <span><strong>Privacidad garantizada:</strong> No existen servidores remotos ni rastreadores. Tus credenciales nunca salen de tu propio dispositivo.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Compatibilidad Técnica -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg">
+            <i class="fa-brands fa-android"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white">Compatibilidad y Requisitos</h2>
+        </div>
+        <p class="text-sm leading-relaxed text-slate-300 mb-3">
+          La app fue configurada con soporte amplio para dispositivos modernos de Android:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-3.5 rounded-xl bg-surface-bg border border-surface-border">
+            <span class="block font-bold text-white mb-1">Android 5.0 (Lollipop) en adelante</span>
+            Compatible con la inmensa mayoría de teléfonos y tablets Android del mercado.
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-bg border border-surface-border">
+            <span class="block font-bold text-white mb-1">Cero dependencias de Google Services</span>
+            Funciona sin problemas incluso en dispositivos sin servicios oficiales de Google.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Canales de Contacto Directo -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white">Contacto y Retroalimentación</h2>
+        </div>
+        <p class="text-sm text-slate-300 mb-6">
+          ¿Tienes dudas, encontraste un fallo o simplemente quieres compartir tu opinión? Puedes escribirme directamente a los buzones dedicados:
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="mailto:soporte_rogzca@yahoo.com" class="p-4 rounded-xl bg-surface-bg border border-surface-border hover:border-indigo-500/50 transition flex items-start gap-3">
+            <i class="fa-solid fa-bug text-indigo-400 mt-1"></i>
+            <div>
+              <span class="block text-sm font-bold text-white">Soporte y Bugs</span>
+              <span class="text-xs text-slate-400">soporte_rogzca@yahoo.com</span>
+              <span class="block text-[11px] text-slate-500 mt-1">Adjunta modelo de celular y versión de Android si reportas un error.</span>
+            </div>
+          </a>
+
+          <a href="mailto:feedback_rogzca@yahoo.com" class="p-4 rounded-xl bg-surface-bg border border-surface-border hover:border-indigo-500/50 transition flex items-start gap-3">
+            <i class="fa-solid fa-comments text-amber-400 mt-1"></i>
+            <div>
+              <span class="block text-sm font-bold text-white">Feedback y Comentarios</span>
+              <span class="text-xs text-slate-400">feedback_rogzca@yahoo.com</span>
+              <span class="block text-[11px] text-slate-500 mt-1">Opiniones, sugerencias o comentarios sobre la experiencia.</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Tarjeta Ko-Fi -->
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-surface-card to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-1">¿Quieres apoyar al proyecto?</h3>
+          <p class="text-sm text-slate-400">Si la aplicación te ahorra tiempo semana tras semana, puedes invitarme un café para apoyar el desarrollo.</p>
+        </div>
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-3 rounded-xl font-bold text-sm transition">
+          <i class="fa-solid fa-mug-hot"></i> Comprarme un café en Ko-Fi
+        </a>
+      </div>
+    </div>
+
+    <!-- Botón Volver -->
+    <div class="mt-12 text-center">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-surface-card hover:bg-surface-highlight border border-surface-border px-4 py-2.5 rounded-xl transition text-slate-300">
+        <i class="fa-solid fa-arrow-left"></i> Volver a la página principal
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-surface-border py-8 text-center text-xs text-slate-500 bg-[#090c14]">
+    <p>© 2026 Epic-Claim — Creado por Rogzca. No afiliado con Epic Games, Inc.</p>
+  </footer>
+
+</body>
+</html>
