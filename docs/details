@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capturas y Funciones | Epic-Claim</title>
+  <meta name="description" content="Explora en profundidad las funciones y capturas de pantalla de Epic-Claim para Android.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#6366f1', 600: '#4f46e5' }
+          }
+        }
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navbar -->
+  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
+          <i class="fa-solid fa-gamepad text-lg"></i>
+        </div>
+        <div>
+          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
+        </div>
+      </a>
+      
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
+        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Inicio</a>
+        <a href="faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">FAQ</a>
+        <a href="capturas.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Capturas</a>
+        <a href="acerca-de.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Acerca De</a>
+        
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="max-w-5xl mx-auto px-6 py-16 flex-grow">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-4">
+        Galería de la Aplicación
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Capturas y Funciones a Fondo</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
+        Conoce al detalle cada apartado visual y técnico diseñado para que el reclamo de juegos sea rápido, ligero y sin fricción.
+      </p>
+    </div>
+
+    <!-- Lista de 8 Bloques de Funcionalidades -->
+    <div class="space-y-12">
+      
+      <!-- Captura 1 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Función 01</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Inicio limpio y sin complicaciones!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Imagen del juego, sinopsis y botón de canje. Sin opciones ocultas innecesarias que la hagan más lenta. Simple y directo.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Solo da click en el botón de «Canjear Juego», de ahí en «Agregar a la Biblioteca» y listo. Si no alcanzas a ver la sinopsis, simplemente toca la imagen para verla completamente, y también para saber cuando se termina la oferta.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/Kp3CnK8r/01.jpg" alt="Inicio de la app" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Inicio de la app</span>
+        </div>
+      </div>
+
+      <!-- Captura 2 (Invertido) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/d41bcHHs/02.jpg" alt="Cuentas Infinitas" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Cuentas Infinitas</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-wider">Función 02</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Todas tus cuentas en una sola aplicación!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            No importa cuantas cuentas tengas. Agrega todas e intercambia entre ellas las veces que sea necesario. El único límite aquí es tus ganas de recordar la cantidad que posees.
+          </p>
+        </div>
+      </div>
+
+      <!-- Captura 3 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-violet-500 dark:text-violet-400 uppercase tracking-wider">Función 03</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Ya está en tu biblioteca! ¡No necesitas volverlo a canjear!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Gracias a la etiqueta roja que te indica cuando ya lo has obtenido, puedes saber que ya posees ese juego en tu biblioteca. No será necesario hacerlo de nuevo.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Pero ojo: necesitas confirmarlo por ti mismo pulsando la palomita, para que el historial lo registre y así pueda mostrarte ese cartel.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/9mjTQNvK/03.png" alt="Etiqueta de recordatorio" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Etiqueta de recordatorio</span>
+        </div>
+      </div>
+
+      <!-- Captura 4 (Invertido) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/Xf3W1RZy/04.png" alt="Notificaciones" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Notificaciones</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-amber-500 dark:text-amber-400 uppercase tracking-wider">Función 04</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Notificaciones al instante!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Si existe algún juego gratis disponible, obtén una notificación al instante. Te mostrará los disponibles en ese preciso momento. ¡Incluso puedes configurar el sonido de ésta!
+          </p>
+        </div>
+      </div>
+
+      <!-- Captura 5 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-blue-500 dark:text-blue-400 uppercase tracking-wider">Función 05</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Directo y sin obstáculos!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Al pulsar sobre «Canjear Juego», te lleva directamente al videojuego en cuestión. Nada de buscarlo por ti mismo, nada de esperar a que Epic cargue su lenta página para scrollear hacia abajo en su búsqueda. Simplemente pulsa en «Agregar a la Biblioteca», y listo.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/ns0v1tmx/05.png" alt="Canje directo" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Canje asistido</span>
+        </div>
+      </div>
+
+      <!-- Captura 6 (Invertido) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/MxQnZDn6/06.png" alt="Historial" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Historial</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-rose-500 dark:text-rose-400 uppercase tracking-wider">Función 06</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Historial de registro!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Encuentra un juego canjeado mediante el buscador, o mira la fecha y hora exacta en cuando canjeaste ese videojuego.
+          </p>
+        </div>
+      </div>
+
+      <!-- Captura 7 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-teal-500 dark:text-teal-400 uppercase tracking-wider">Función 07</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Sección de Ajustes!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Configura el idioma, el modo oscuro de la aplicación para las horas que quieras o que siga el sistema, configura las notificaciones y su frecuencia de avisos, limpia el caché o elimina de golpe todas las cuentas.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/cSqfdqN0/07.png" alt="Ajustes" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Ajustes</span>
+        </div>
+      </div>
+
+      <!-- Captura 8 (Invertido) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/dw05FFtM/08.png" alt="Acerca De" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Acerca De</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Función 08</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Resuelve tus dudas!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            ¿Quieres saber más acerca de la app? ¿O tienes algunas preguntas con respecto a ésta aplicación y su función? Ingresa a la sección de Acerca De.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Ahí, más de 10 preguntas se visualizan junto a sus respuestas. Y si tienes más dudas, siempre puedes usar el correo colocado allí.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botón Volver -->
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] border border-slate-200 dark:border-[#1f293d] px-5 py-3 rounded-xl transition text-slate-700 dark:text-slate-300 shadow-sm font-semibold">
+        <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-10 bg-slate-100 dark:bg-[#090c14] text-xs text-slate-500 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-semibold text-slate-700 dark:text-slate-400">Epic-Claim — Creado por Rogzca</p>
+        <p class="mt-1">Desarrollado con asistencia de Gemini AI.</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="faq.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">FAQ</a>
+        <a href="capturas.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Capturas</a>
+        <a href="acerca-de.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Acerca De</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modo Oscuro -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+    updateIcons();
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateIcons();
+    });
+  </script>
+</body>
+</html>
