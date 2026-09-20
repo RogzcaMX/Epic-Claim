@@ -5,41 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acerca De | Epic-Claim</title>
   <meta name="description" content="Conoce la historia detrás de Epic-Claim, su filosofía de uso personal y cómo fue desarrollada con IA por Rogzca.">
+  
+  <!-- Favicon con tu logo -->
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            brand: { 500: '#6366f1', 600: '#4f46e5' },
-            surface: { bg: '#0b0f19', card: '#131926', border: '#1f293d', highlight: '#1a2234' }
+            brand: { 500: '#6366f1', 600: '#4f46e5' }
           }
         }
       }
     }
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   </script>
   <style>
-    body { background-color: #0b0f19; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
 
-  <!-- Navbar -->
-  <header class="border-b border-surface-border bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+  <!-- Header & Navigation Bar -->
+  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md">
-          <i class="fa-solid fa-gamepad text-base"></i>
+        <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-9 h-9 rounded-xl object-cover shadow-md shadow-indigo-500/20 border border-slate-200 dark:border-slate-700">
+        <div>
+          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
         </div>
-        <span class="font-black text-lg tracking-tight text-white">Epic-Claim</span>
       </a>
 
-      <!-- Menú de navegación -->
-      <nav class="flex items-center gap-4 text-xs font-semibold">
-        <a href="index.html" class="text-slate-400 hover:text-white transition">Inicio</a>
-        <a href="faq.html" class="text-slate-400 hover:text-white transition">FAQ</a>
-        <a href="acerca-de.html" class="text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Acerca De</a>
+      <!-- Navbar Links & Controls -->
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
+        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Inicio</a>
+        <a href="faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">FAQ</a>
+        <a href="details.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Más Detalles</a>
+        <a href="acerca-de.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Acerca De</a>
+        
+        <!-- Idioma: Salto a versión en inglés -->
+        <a href="en/about.html" title="Switch to English" class="flex items-center gap-1 bg-slate-200 dark:bg-slate-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 px-2.5 py-1 rounded-lg text-[11px] font-bold transition">
+          <i class="fa-solid fa-globe text-xs"></i> EN
+        </a>
+
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-amber-500/30 px-3 py-1.5 rounded-xl transition">
+          <i class="fa-solid fa-mug-hot"></i> Ko-Fi
+        </a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#131926] dark:hover:bg-[#1a2234] border border-slate-300 dark:border-[#1f293d] px-3.5 py-1.5 rounded-xl transition text-slate-700 dark:text-slate-200">
+          <i class="fa-brands fa-github text-sm"></i> GitHub
+        </a>
+
+        <!-- Botón Modo Oscuro / Claro -->
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -48,120 +81,120 @@
   <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
     <!-- Encabezado -->
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-3">
         Versión 1.0 «Archikós»
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">Detrás del Proyecto</h1>
-      <p class="text-slate-400 text-base max-w-xl mx-auto">
-        Desarrollado por <span class="text-slate-200 font-bold">Rogzca Developer</span> con asistencia de <span class="text-indigo-400 font-bold">Gemini AI</span>.
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Detrás del Proyecto</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base max-w-xl mx-auto">
+        Desarrollado por <span class="text-slate-900 dark:text-slate-200 font-bold">Rogzca Developer</span> con asistencia de <span class="text-indigo-600 dark:text-indigo-400 font-bold">Gemini AI</span>.
       </p>
     </div>
 
-    <div class="space-y-8 text-slate-300">
+    <div class="space-y-8">
       <!-- 1. El Origen y la Filosofía -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+      <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg">
             <i class="fa-solid fa-lightbulb"></i>
           </div>
-          <h2 class="text-xl font-bold text-white">¿Cómo y por qué nació Epic-Claim?</h2>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">¿Cómo y por qué nació Epic-Claim?</h2>
         </div>
-        <p class="text-sm leading-relaxed mb-4 text-slate-300">
+        <p class="text-sm leading-relaxed mb-4 text-slate-600 dark:text-slate-300">
           Un día, mientras canjeaba los juegos semanales, me cruzó un pensamiento claro: <em>"¿Habrá una manera de evitarme todo este hastío de tener que iniciar y cerrar sesión a cada rato?"</em>.
         </p>
-        <p class="text-sm leading-relaxed mb-4 text-slate-300">
+        <p class="text-sm leading-relaxed mb-4 text-slate-600 dark:text-slate-300">
           Simplemente fue creada para que a las personas flojas, como su creador, se les haga más sencillo y menos tedioso canjear los juegos regalados por Epic Games. Sobre todo para quienes administramos varias cuentas y nos da pereza andar cambiando de sesión manualmente en el navegador.
         </p>
-        <p class="text-sm leading-relaxed text-slate-400 border-l-2 border-indigo-500 pl-4 italic">
+        <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400 border-l-2 border-indigo-500 pl-4 italic">
           "¿Esto me hace desarrollador? Claro que no. Mi tarea fue darle forma a la aplicación, pensar las características, guiar a Gemini durante el proceso, probarla en tiempo real y corregir fallos sobre la marcha. Aunque al menos aprendí bastante en el camino."
         </p>
       </div>
 
       <!-- 2. Declaración de Uso Personal y Legalidad -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+      <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h2 class="text-xl font-bold text-white">Uso Personal y Compromiso Ético</h2>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Uso Personal y Compromiso Ético</h2>
         </div>
-        <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           <li class="flex items-start gap-2">
-            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
             <span><strong>Uso personal y gratuito:</strong> Creado sin fines de lucro. Queda estrictamente prohibida la venta o reproducción comercial de esta app.</span>
           </li>
           <li class="flex items-start gap-2">
-            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
             <span><strong>No es una herramienta de hackeo:</strong> La app no vulnera los sistemas ni elude pagos de Epic Games. Solo facilita la navegación directa a ofertas oficiales de costo $0.</span>
           </li>
           <li class="flex items-start gap-2">
-            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
             <span><strong>Privacidad garantizada:</strong> No existen servidores remotos ni rastreadores. Tus credenciales nunca salen de tu propio dispositivo.</span>
           </li>
         </ul>
       </div>
 
       <!-- 3. Compatibilidad Técnica -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+      <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg">
             <i class="fa-brands fa-android"></i>
           </div>
-          <h2 class="text-xl font-bold text-white">Compatibilidad y Requisitos</h2>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Compatibilidad y Requisitos</h2>
         </div>
-        <p class="text-sm leading-relaxed text-slate-300 mb-3">
+        <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 mb-3">
           La app fue configurada con soporte amplio para dispositivos modernos de Android:
         </p>
         <div class="grid sm:grid-cols-2 gap-4 text-xs">
-          <div class="p-3.5 rounded-xl bg-surface-bg border border-surface-border">
-            <span class="block font-bold text-white mb-1">Android 5.0 (Lollipop) en adelante</span>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#0b0f19] border border-slate-200 dark:border-[#1f293d]">
+            <span class="block font-bold text-slate-900 dark:text-white mb-1">Android 5.0 (Lollipop) en adelante</span>
             Compatible con la inmensa mayoría de teléfonos y tablets Android del mercado.
           </div>
-          <div class="p-3.5 rounded-xl bg-surface-bg border border-surface-border">
-            <span class="block font-bold text-white mb-1">Cero dependencias de Google Services</span>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#0b0f19] border border-slate-200 dark:border-[#1f293d]">
+            <span class="block font-bold text-slate-900 dark:text-white mb-1">Cero dependencias de Google Services</span>
             Funciona sin problemas incluso en dispositivos sin servicios oficiales de Google.
           </div>
         </div>
       </div>
 
       <!-- 4. Canales de Contacto Directo -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border">
+      <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-lg">
+          <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400 flex items-center justify-center text-lg">
             <i class="fa-solid fa-envelope-open-text"></i>
           </div>
-          <h2 class="text-xl font-bold text-white">Contacto y Retroalimentación</h2>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Contacto y Retroalimentación</h2>
         </div>
-        <p class="text-sm text-slate-300 mb-6">
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">
           ¿Tienes dudas, encontraste un fallo o simplemente quieres compartir tu opinión? Puedes escribirme directamente a los buzones dedicados:
         </p>
 
         <div class="grid sm:grid-cols-2 gap-4">
-          <a href="mailto:soporte_rogzca@yahoo.com" class="p-4 rounded-xl bg-surface-bg border border-surface-border hover:border-indigo-500/50 transition flex items-start gap-3">
-            <i class="fa-solid fa-bug text-indigo-400 mt-1"></i>
+          <a href="mailto:soporte_rogzca@yahoo.com" class="p-4 rounded-xl bg-slate-50 dark:bg-[#0b0f19] border border-slate-200 dark:border-[#1f293d] hover:border-indigo-500/50 transition flex items-start gap-3">
+            <i class="fa-solid fa-bug text-indigo-500 mt-1"></i>
             <div>
-              <span class="block text-sm font-bold text-white">Soporte y Bugs</span>
-              <span class="text-xs text-slate-400">soporte_rogzca@yahoo.com</span>
-              <span class="block text-[11px] text-slate-500 mt-1">Adjunta modelo de celular y versión de Android si reportas un error.</span>
+              <span class="block text-sm font-bold text-slate-900 dark:text-white">Soporte y Bugs</span>
+              <span class="text-xs text-slate-500 dark:text-slate-400">soporte_rogzca@yahoo.com</span>
+              <span class="block text-[11px] text-slate-400 dark:text-slate-500 mt-1">Adjunta modelo de celular y versión de Android si reportas un error.</span>
             </div>
           </a>
 
-          <a href="mailto:feedback_rogzca@yahoo.com" class="p-4 rounded-xl bg-surface-bg border border-surface-border hover:border-indigo-500/50 transition flex items-start gap-3">
-            <i class="fa-solid fa-comments text-amber-400 mt-1"></i>
+          <a href="mailto:feedback_rogzca@yahoo.com" class="p-4 rounded-xl bg-slate-50 dark:bg-[#0b0f19] border border-slate-200 dark:border-[#1f293d] hover:border-indigo-500/50 transition flex items-start gap-3">
+            <i class="fa-solid fa-comments text-amber-500 mt-1"></i>
             <div>
-              <span class="block text-sm font-bold text-white">Feedback y Comentarios</span>
-              <span class="text-xs text-slate-400">feedback_rogzca@yahoo.com</span>
-              <span class="block text-[11px] text-slate-500 mt-1">Opiniones, sugerencias o comentarios sobre la experiencia.</span>
+              <span class="block text-sm font-bold text-slate-900 dark:text-white">Feedback y Comentarios</span>
+              <span class="text-xs text-slate-500 dark:text-slate-400">feedback_rogzca@yahoo.com</span>
+              <span class="block text-[11px] text-slate-400 dark:text-slate-500 mt-1">Opiniones, sugerencias o comentarios sobre la experiencia.</span>
             </div>
           </a>
         </div>
       </div>
 
       <!-- 5. Tarjeta Ko-Fi -->
-      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-surface-card to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-white dark:via-[#131926] to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-sm">
         <div>
-          <h3 class="text-lg font-bold text-white mb-1">¿Quieres apoyar al proyecto?</h3>
-          <p class="text-sm text-slate-400">Si la aplicación te ahorra tiempo semana tras semana, puedes invitarme un café para apoyar el desarrollo.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">¿Quieres apoyar al proyecto?</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Si la aplicación te ahorra tiempo semana tras semana, puedes invitarme un café para apoyar el desarrollo.</p>
         </div>
         <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-3 rounded-xl font-bold text-sm transition">
           <i class="fa-solid fa-mug-hot"></i> Comprarme un café en Ko-Fi
@@ -171,16 +204,41 @@
 
     <!-- Botón Volver -->
     <div class="mt-12 text-center">
-      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-surface-card hover:bg-surface-highlight border border-surface-border px-4 py-2.5 rounded-xl transition text-slate-300">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] border border-slate-200 dark:border-[#1f293d] px-5 py-2.5 rounded-xl transition text-slate-700 dark:text-slate-300 shadow-sm font-semibold">
         <i class="fa-solid fa-arrow-left"></i> Volver a la página principal
       </a>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-surface-border py-8 text-center text-xs text-slate-500 bg-[#090c14]">
+  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-8 text-center text-xs text-slate-500 bg-slate-100 dark:bg-[#090c14] transition-colors duration-200">
     <p>© 2026 Epic-Claim — Creado por Rogzca. No afiliado con Epic Games, Inc.</p>
   </footer>
+
+  <!-- Script Modo Oscuro -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+
+    updateIcons();
+
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateIcons();
+    });
+  </script>
 
 </body>
 </html>
