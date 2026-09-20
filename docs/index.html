@@ -42,7 +42,7 @@
       }
     }
 
-    if (localStorage.getItem('theme') === 'dark') {
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -67,8 +67,8 @@
     .dark .metallic-gradient {
       background-color: #07080a;
       background-image: 
-        radial-gradient(at 85% 15%, rgba(249, 115, 22, 0.08) 0px, transparent 45%),
-        radial-gradient(at 15% 40%, rgba(30, 41, 59, 0.4) 0px, transparent 50%),
+        radial-gradient(at 85% 15%, rgba(249, 115, 22, 0.10) 0px, transparent 45%),
+        radial-gradient(at 15% 40%, rgba(30, 41, 59, 0.5) 0px, transparent 50%),
         linear-gradient(180deg, #090a0d 0%, #101217 60%, #08090b 100%);
       background-attachment: fixed;
     }
@@ -82,15 +82,15 @@
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     }
     .dark .aluminum-card {
-      background: rgba(17, 20, 26, 0.65);
+      background: rgba(17, 20, 26, 0.75);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.75);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#edeef2] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
   <!-- Encabezado y Barra de Navegación Calibrada -->
   <header class="border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl sticky top-0 z-50 transition-colors duration-200">
@@ -102,14 +102,14 @@
           <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-full h-full object-cover">
         </div>
         <div>
-          <span class="font-hero font-black text-lg tracking-tight uppercase text-black dark:text-white">Epic-Claim</span>
+          <span class="font-hero font-black text-lg tracking-tight uppercase text-black dark:text-[#e6edf3]">Epic-Claim</span>
           <span class="block mono text-[10px] text-slate-500 dark:text-slate-400 font-semibold -mt-0.5">v1.0 «Archikós»</span>
         </div>
       </a>
 
       <!-- Enlaces del Navbar y Selector de Idioma -->
       <nav class="flex items-center gap-1.5 sm:gap-3 text-xs font-semibold uppercase tracking-wider">
-        <a href="index.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-white dark:text-black font-bold shadow-xs transition">Inicio</a>
+        <a href="index.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition">Inicio</a>
         <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
         <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Más Detalles</a>
         <a href="acerca-de.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Acerca De</a>
@@ -148,14 +148,14 @@
     <section class="max-w-5xl mx-auto px-6 pt-16 pb-16 text-center">
       
       <!-- Badge de Versión -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-200 text-xs font-semibold mb-8 shadow-xs">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-8 shadow-xs">
         <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
         <span class="mono">Versión 1.0 «Archikós» disponible</span>
       </div>
 
-      <!-- Titular con Cabinet Grotesk -->
-      <h1 class="font-hero text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-[-0.03em] leading-[1.02] max-w-4xl mx-auto mb-6 text-black dark:text-white">
-        Reclama los juegos gratis de Epic Games <span class="text-orange-600 dark:text-orange-400">en solo 2 o 3 toques</span>
+      <!-- Titular Principal con Tono Perlado en Modo Oscuro -->
+      <h1 class="font-hero text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-[-0.03em] leading-[1.02] max-w-4xl mx-auto mb-6 text-black dark:text-[#e6edf3]">
+        Reclama los juegos gratis de Epic Games <span class="text-orange-600 dark:text-orange-500">en solo 2 o 3 toques</span>
       </h1>
 
       <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
@@ -166,12 +166,12 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
         <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.apk"
            download="Epic-Claim.v1.0.Archikos.apk"
-           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
+           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
           <i class="fa-brands fa-android text-base"></i>
           Descargar APK v1.0 (14.12 MB)
         </a>
-        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-black/80 px-6 py-4 rounded-xl font-mono text-xs uppercase font-bold tracking-wider transition text-slate-800 dark:text-slate-200">
-          <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-400"></i> Preguntas Frecuentes
+        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-6 py-4 rounded-xl font-mono text-xs uppercase font-bold tracking-wider transition text-slate-800 dark:text-slate-200">
+          <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-500"></i> Preguntas Frecuentes
         </a>
       </div>
 
@@ -179,28 +179,28 @@
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
         
         <div class="aluminum-card p-5 rounded-2xl">
-          <span class="block text-lg font-bold text-black dark:text-white mb-1 tracking-tight">
-            <i class="fa-solid fa-users text-orange-600 dark:text-orange-400 mr-1.5 text-sm"></i> Ilimitado
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            <i class="fa-solid fa-users text-orange-600 dark:text-orange-500 mr-1.5 text-sm"></i> Ilimitado
           </span>
           <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Soporte multicuenta</span>
         </div>
 
         <div class="aluminum-card p-5 rounded-2xl">
-          <span class="block text-lg font-bold text-black dark:text-white mb-1 tracking-tight">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
             <i class="fa-solid fa-lock text-emerald-600 dark:text-emerald-400 mr-1.5 text-sm"></i> AES-256
           </span>
           <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Cifrado local seguro</span>
         </div>
 
         <div class="aluminum-card p-5 rounded-2xl">
-          <span class="block text-lg font-bold text-black dark:text-white mb-1 tracking-tight">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
             <i class="fa-solid fa-shield text-blue-600 dark:text-blue-400 mr-1.5 text-sm"></i> 0 Servidores
           </span>
           <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Privacidad total en tu móvil</span>
         </div>
 
         <div class="aluminum-card p-5 rounded-2xl">
-          <span class="block text-lg font-bold text-black dark:text-white mb-1 tracking-tight">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
             <i class="fa-solid fa-bell text-amber-600 dark:text-amber-400 mr-1.5 text-sm"></i> Jueves
           </span>
           <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Aviso de reseteo semanal</span>
@@ -213,7 +213,7 @@
     <!-- Características Reales -->
     <section class="max-w-6xl mx-auto px-6 py-12">
       <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-black dark:text-white tracking-tight mb-3">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-black dark:text-[#e6edf3] tracking-tight mb-3">
           Funciones pensadas para no perder tiempo
         </h2>
         <p class="text-slate-600 dark:text-slate-400 text-sm max-w-xl mx-auto">
@@ -226,10 +226,10 @@
         <!-- Característica 1 -->
         <div class="aluminum-card p-8 rounded-3xl flex flex-col justify-between transition hover:-translate-y-0.5">
           <div>
-            <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
+            <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-orange-600 dark:text-orange-500 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
               <i class="fa-solid fa-users-gear"></i>
             </div>
-            <h3 class="text-lg font-bold text-black dark:text-white mb-2.5 tracking-tight">
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
               Multicuenta Instantáneo
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -247,7 +247,7 @@
             <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <h3 class="text-lg font-bold text-black dark:text-white mb-2.5 tracking-tight">
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
               Canje en 2 Toques
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -265,7 +265,7 @@
             <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
               <i class="fa-solid fa-clock-rotate-left"></i>
             </div>
-            <h3 class="text-lg font-bold text-black dark:text-white mb-2.5 tracking-tight">
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
               Historial Independiente
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -281,9 +281,9 @@
 
       <!-- Botón Ver más funciones -->
       <div class="mt-10 text-center">
-        <a href="details.html" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-black/80 font-mono text-xs uppercase font-bold text-black dark:text-white transition shadow-xs group">
+        <a href="details.html" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 font-mono text-xs uppercase font-bold text-black dark:text-slate-200 transition shadow-xs group">
           <span>Ver más funciones</span>
-          <i class="fa-solid fa-arrow-right text-orange-600 dark:text-orange-400 group-hover:translate-x-1 transition-transform"></i>
+          <i class="fa-solid fa-arrow-right text-orange-600 dark:text-orange-500 group-hover:translate-x-1 transition-transform"></i>
         </a>
       </div>
     </section>
@@ -292,8 +292,8 @@
     <section class="max-w-4xl mx-auto px-6 pb-16">
       <div class="aluminum-card p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
         <div>
-          <span class="mono text-[11px] uppercase tracking-widest text-orange-600 dark:text-orange-400 font-bold block mb-1">PROYECTO INDEPENDIENTE</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-black dark:text-white mb-1 tracking-tight">
+          <span class="mono text-[11px] uppercase tracking-widest text-orange-600 dark:text-orange-500 font-bold block mb-1">PROYECTO INDEPENDIENTE</span>
+          <h3 class="font-display text-2xl font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
             ¿Te resulta útil el proyecto?
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-lg">
@@ -311,7 +311,7 @@
   <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="text-center sm:text-left">
-        <p class="font-bold text-black dark:text-white">Epic-Claim — Creado por Rogzca</p>
+        <p class="font-bold text-black dark:text-[#e6edf3]">Epic-Claim — Creado por Rogzca</p>
         <p class="mt-1 text-slate-500">Desarrollado con asistencia de Gemini AI. Proyecto para uso personal y de código abierto.</p>
       </div>
       
