@@ -92,53 +92,88 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
-  <!-- Encabezado y Barra de Navegación Calibrada (h-20) -->
-  <header class="border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl sticky top-0 z-50 transition-colors duration-200">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+  <!-- Encabezado y Barra de Navegación Calibrada -->
+  <header class="border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl sticky top-0 z-55 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
       
-      <!-- Brand Hardware -->
-      <a href="index.html" class="flex items-center gap-3.5 group">
-        <div class="relative w-9 h-9 rounded-xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xs group-hover:scale-105 transition-transform">
+      <!-- Brand Hardware (Con whitespace-nowrap y shrink-0 estricto) -->
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
+        <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xs group-hover:scale-105 transition-transform shrink-0">
           <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-full h-full object-cover">
         </div>
         <div>
-          <span class="font-hero font-black text-lg tracking-tight uppercase text-black dark:text-[#e6edf3]">Epic-Claim</span>
-          <span class="block mono text-[10px] text-slate-500 dark:text-slate-400 font-semibold -mt-0.5">v1.0 «Archikós»</span>
+          <span class="font-hero font-black text-base sm:text-lg tracking-tight uppercase text-black dark:text-[#e6edf3] whitespace-nowrap">Epic-Claim</span>
+          <span class="block mono text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 font-semibold -mt-0.5 whitespace-nowrap">v1.0 «Archikós»</span>
         </div>
       </a>
 
-      <!-- Enlaces del Navbar y Selector de Idioma -->
-      <nav class="flex items-center gap-1.5 sm:gap-3 text-xs font-semibold uppercase tracking-wider">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Inicio</a>
-        <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
-        <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Más Detalles</a>
-        <a href="acerca-de.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition">Acerca De</a>
+      <!-- Controles para pantallas medianas/pequeñas (< lg): Selector EN, Tema y Hamburguesa -->
+      <div class="flex items-center gap-2 lg:hidden shrink-0">
+        <a href="en/about.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
+          <i class="fa-solid fa-globe text-xs"></i> EN
+        </a>
+        <button id="theme-toggle-mobile" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
+          <i class="fa-solid fa-moon text-xs dark:hidden text-slate-700"></i>
+          <i class="fa-solid fa-sun text-xs hidden dark:inline text-amber-500"></i>
+        </button>
+        <button id="menu-toggle" type="button" aria-label="Menú principal" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer text-slate-800 dark:text-slate-200">
+          <i id="menu-icon-open" class="fa-solid fa-bars text-sm"></i>
+          <i id="menu-icon-close" class="fa-solid fa-xmark text-sm hidden"></i>
+        </button>
+      </div>
 
-        <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5 hidden sm:block"></div>
+      <!-- Enlaces del Navbar Desktop (Visible solo en lg: en adelante) -->
+      <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold uppercase tracking-wider shrink-0">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Inicio</a>
+        <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">FAQ</a>
+        <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Más Detalles</a>
+        <a href="acerca-de.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition whitespace-nowrap">Acerca De</a>
 
-        <!-- Botón Selector a Inglés -->
-        <a href="en/about.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
+        <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5"></div>
+
+        <!-- Botón Selector a Inglés Desktop -->
+        <a href="en/about.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
           <i class="fa-solid fa-globe text-xs"></i> EN
         </a>
 
         <!-- Ko-Fi Botón Hardware -->
-        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs">
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs whitespace-nowrap">
           <i class="fa-solid fa-mug-hot text-[11px]"></i>
           <span>Ko-Fi</span>
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition">
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition whitespace-nowrap">
           <i class="fa-brands fa-github text-sm"></i>
           <span>GitHub</span>
         </a>
 
-        <!-- Botón Modo Oscuro / Claro -->
-        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
+        <!-- Botón Modo Oscuro / Claro Desktop -->
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0">
           <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-xs hidden text-slate-700"></i>
           <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xs hidden text-amber-500"></i>
         </button>
       </nav>
+    </div>
+
+    <!-- Menú Desplegable (< lg) -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-black/10 dark:border-white/10 bg-white/90 dark:bg-[#111317]/95 backdrop-blur-xl px-6 py-5 space-y-4">
+      <nav class="flex flex-col gap-2 text-xs font-semibold uppercase tracking-wider">
+        <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Inicio</a>
+        <a href="faq.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
+        <a href="details.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Más Detalles</a>
+        <a href="acerca-de.html" class="px-4 py-2.5 rounded-xl bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs">Acerca De</a>
+      </nav>
+      <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-3">
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs">
+          <i class="fa-solid fa-mug-hot text-[11px]"></i>
+          <span>Ko-Fi</span>
+        </a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -302,35 +337,50 @@
     </div>
   </footer>
 
-  <!-- Script Modo Oscuro -->
+  <!-- Scripts: Modo Oscuro + Menú Hamburguesa Móvil -->
   <script>
     const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
     function updateIcons() {
       if (document.documentElement.classList.contains('dark')) {
-        themeToggleLightIcon.classList.remove('hidden');
-        themeToggleDarkIcon.classList.add('hidden');
+        if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
+        if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
       } else {
-        themeToggleDarkIcon.classList.remove('hidden');
-        themeToggleLightIcon.classList.add('hidden');
+        if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
+        if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
       }
     }
 
     updateIcons();
 
-    themeToggleBtn.addEventListener('click', function() {
+    function toggleTheme() {
       document.documentElement.classList.toggle('dark');
-
       if (document.documentElement.classList.contains('dark')) {
         localStorage.setItem('theme', 'dark');
       } else {
         localStorage.setItem('theme', 'light');
       }
-
       updateIcons();
-    });
+    }
+
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden');
+        menuIconClose.classList.toggle('hidden');
+      });
+    }
   </script>
 
 </body>
