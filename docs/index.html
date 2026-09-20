@@ -5,60 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Epic-Claim | Reclama tus juegos gratis de Epic Games en Android</title>
   <meta name="description" content="Reclama los juegos gratis semanales de Epic Games en segundos desde tu Android. Soporte multicuenta instantáneo, historial cifrado y alertas los jueves.">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <script>
+    // Configurar Tailwind para usar la clase 'dark' en el elemento raíz
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             brand: {
               500: '#6366f1',
               600: '#4f46e5',
-            },
-            surface: {
-              bg: '#0b0f19',
-              card: '#131926',
-              border: '#1f293d',
-              highlight: '#1a2234'
             }
           }
         }
       }
     }
+
+    // Script inmediato para evitar el "parpadeo blanco" al cargar
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   </script>
+
   <style>
-    body { background-color: #0b0f19; color: #f1f5f9; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
 
   <!-- Encabezado y Barra de Navegación -->
-  <header class="border-b border-surface-border bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
           <i class="fa-solid fa-gamepad text-lg"></i>
         </div>
         <div>
-          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
-          <span class="block text-[10px] text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
+          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
         </div>
       </div>
       
-      <!-- Enlaces del Navbar -->
+      <!-- Enlaces del Navbar y Botón de Tema -->
       <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
-        <a href="index.html" class="text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Inicio</a>
-        <a href="faq.html" class="text-slate-300 hover:text-white transition">FAQ</a>
-        <a href="acerca-de.html" class="text-slate-300 hover:text-white transition">Acerca De</a>
-        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3 py-1.5 rounded-xl transition">
+        <a href="index.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Inicio</a>
+        <a href="faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">FAQ</a>
+        <a href="acerca-de.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Acerca De</a>
+        
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-amber-500/30 px-3 py-1.5 rounded-xl transition">
           <i class="fa-solid fa-mug-hot"></i> Ko-Fi
         </a>
-        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 bg-surface-card hover:bg-surface-highlight border border-surface-border px-3.5 py-1.5 rounded-xl transition text-slate-200">
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#131926] dark:hover:bg-[#1a2234] border border-slate-300 dark:border-[#1f293d] px-3.5 py-1.5 rounded-xl transition text-slate-700 dark:text-slate-200">
           <i class="fa-brands fa-github text-sm"></i> GitHub
         </a>
+
+        <!-- Botón Toggle de Tema (Sol / Luna) -->
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -67,100 +80,99 @@
   <main class="flex-grow">
     <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center">
       <!-- Badge de Versión -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-8">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
         Versión 1.0 «Archikós» disponible
       </div>
 
-      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
-        Reclama los juegos gratis de Epic Games <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">en solo 2 o 3 toques</span>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6 text-slate-900 dark:text-white">
+        Reclama los juegos gratis de Epic Games <span class="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-400 dark:via-violet-400 dark:to-purple-400 bg-clip-text text-transparent">en solo 2 o 3 toques</span>
       </h1>
 
-      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
         Diseñada para quienes tienen varias cuentas y les da flojera iniciar y cerrar sesión constantemente. Consulta los títulos activos, alterna perfiles y canjea rápido directo desde tu teléfono Android.
       </p>
 
       <!-- Botones de Acción -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-        <!-- Descarga directa al archivo APK subido a la Release v1.0 -->
         <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.apk"
            download="Epic-Claim.v1.0.Archikos.apk"
            class="w-full sm:w-auto flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-bold transition shadow-lg shadow-indigo-600/30 text-sm">
           <i class="fa-brands fa-android text-lg"></i>
           Descargar APK v1.0 (14.12 MB)
         </a>
-        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-surface-border bg-surface-card hover:bg-surface-highlight px-6 py-3.5 rounded-xl font-semibold transition text-slate-300 text-sm">
-          <i class="fa-solid fa-circle-question text-indigo-400"></i> Preguntas Frecuentes
+        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-300 dark:border-[#1f293d] bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] px-6 py-3.5 rounded-xl font-semibold transition text-slate-700 dark:text-slate-300 text-sm shadow-sm">
+          <i class="fa-solid fa-circle-question text-indigo-500 dark:text-indigo-400"></i> Preguntas Frecuentes
         </a>
       </div>
 
       <!-- Métricas / Puntos Rápidos -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-y border-surface-border py-6 text-slate-400 text-xs">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-y border-slate-200 dark:border-[#1f293d] py-6 text-slate-600 dark:text-slate-400 text-xs">
         <div>
-          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-users text-indigo-400 mr-1"></i> Ilimitado</span>
+          <span class="block text-xl font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-users text-indigo-500 dark:text-indigo-400 mr-1"></i> Ilimitado</span>
           Soporte multicuenta
         </div>
         <div>
-          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-lock text-emerald-400 mr-1"></i> AES-256</span>
+          <span class="block text-xl font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-lock text-emerald-500 dark:text-emerald-400 mr-1"></i> AES-256</span>
           Cifrado local seguro
         </div>
         <div>
-          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-shield text-blue-400 mr-1"></i> 0 Servidores</span>
+          <span class="block text-xl font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-shield text-blue-500 dark:text-blue-400 mr-1"></i> 0 Servidores</span>
           Privacidad total en tu móvil
         </div>
         <div>
-          <span class="block text-xl font-bold text-white mb-1"><i class="fa-solid fa-bell text-amber-400 mr-1"></i> Jueves</span>
+          <span class="block text-xl font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-bell text-amber-500 dark:text-amber-400 mr-1"></i> Jueves</span>
           Aviso de reseteo semanal
         </div>
       </div>
     </section>
 
-    <!-- Características Reales del Código -->
+    <!-- Características Reales -->
     <section class="max-w-6xl mx-auto px-6 py-12">
       <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">Funciones pensadas para no perder tiempo</h2>
-        <p class="text-slate-400 text-sm max-w-xl mx-auto">Todo lo que necesitas para no perderte ningún regalo semanal sin lidiar con contraseñas ni navegadores pesados a cada rato.</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Funciones pensadas para no perder tiempo</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm max-w-xl mx-auto">Todo lo que necesitas para no perderte ningún regalo semanal sin lidiar con contraseñas ni navegadores pesados a cada rato.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
-          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5 text-xl">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 flex items-center justify-center mb-5 text-xl">
             <i class="fa-solid fa-users-gear"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Multicuenta Instantáneo</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Multicuenta Instantáneo</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Agrega todas tus cuentas de Epic Games. Alterna entre ellas con un solo toque desde la barra superior sin tener que cerrar e iniciar sesión.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
-          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5 text-xl">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 flex items-center justify-center mb-5 text-xl">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Canje en 2 Toques</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Canje en 2 Toques</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Abre directo la pasarela de compra de costo $0 con tu sesión pre-cargada. Confirma el pedido y márcalo en la barra integrada con un toque.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-indigo-500/40 transition">
-          <div class="w-11 h-11 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-5 text-xl">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] shadow-sm hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-violet-500/10 text-violet-500 dark:text-violet-400 flex items-center justify-center mb-5 text-xl">
             <i class="fa-solid fa-clock-rotate-left"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Historial Independiente</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Historial Independiente</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Registro por fecha y hora de cada reclamo en cada perfil con buscador en tiempo real e insignias de "En biblioteca" para evitar repetidos.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Sección de Apoyo Ko-Fi -->
+    <!-- Apoyo Ko-Fi -->
     <section class="max-w-4xl mx-auto px-6 pb-16">
-      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-surface-card to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-white dark:via-[#131926] to-indigo-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-sm">
         <div>
-          <h3 class="text-lg font-bold text-white mb-1">¿Te resulta útil el proyecto?</h3>
-          <p class="text-sm text-slate-400">Epic-Claim es un proyecto personal y de código abierto. Si quieres apoyar su mantenimiento, puedes invitarme un café.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">¿Te resulta útil el proyecto?</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Epic-Claim es un proyecto personal y de código abierto. Si quieres apoyar su mantenimiento, puedes invitarme un café.</p>
         </div>
         <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-3 rounded-xl font-bold text-sm transition">
           <i class="fa-solid fa-mug-hot"></i> Apoyar en Ko-Fi
@@ -170,22 +182,56 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-surface-border py-10 bg-[#090c14] text-xs text-slate-500">
+  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-10 bg-slate-100 dark:bg-[#090c14] text-xs text-slate-500 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div>
-        <p class="font-semibold text-slate-400">Epic-Claim — Creado por Rogzca</p>
+        <p class="font-semibold text-slate-700 dark:text-slate-400">Epic-Claim — Creado por Rogzca</p>
         <p class="mt-1">Desarrollado con asistencia de Gemini AI. Proyecto para uso personal y de código abierto.</p>
       </div>
       
       <div class="flex gap-4">
-        <a href="faq.html" class="hover:text-slate-300 transition">FAQ</a>
-        <a href="acerca-de.html" class="hover:text-slate-300 transition">Acerca De</a>
-        <a href="mailto:soporte_rogzca@yahoo.com" class="hover:text-slate-300 transition">Soporte</a>
-        <a href="mailto:feedback_rogzca@yahoo.com" class="hover:text-slate-300 transition">Feedback</a>
-        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hover:text-slate-300 transition">GitHub</a>
+        <a href="faq.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">FAQ</a>
+        <a href="acerca-de.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Acerca De</a>
+        <a href="mailto:soporte_rogzca@yahoo.com" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Soporte</a>
+        <a href="mailto:feedback_rogzca@yahoo.com" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Feedback</a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hover:text-slate-900 dark:hover:text-slate-300 transition">GitHub</a>
       </div>
     </div>
   </footer>
+
+  <!-- Lógica JavaScript para Alternar el Modo Oscuro / Claro -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Función para actualizar los iconos según el tema activo
+    function updateIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden'); // En modo oscuro mostramos el Sol para pasar a claro
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');  // En modo claro mostramos la Luna para pasar a oscuro
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+
+    updateIcons();
+
+    themeToggleBtn.addEventListener('click', function() {
+      // Alternar clase 'dark'
+      document.documentElement.classList.toggle('dark');
+
+      // Guardar en localStorage
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+
+      updateIcons();
+    });
+  </script>
 
 </body>
 </html>
