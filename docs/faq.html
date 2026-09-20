@@ -4,41 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preguntas Frecuentes | Epic-Claim</title>
+  <meta name="description" content="Respuestas directas extraídas de la aplicación para resolver cualquier duda o problema sobre Epic-Claim.">
+  
+  <!-- Favicon con tu logo -->
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            brand: { 500: '#6366f1', 600: '#4f46e5' },
-            surface: { bg: '#0b0f19', card: '#131926', border: '#1f293d', highlight: '#1a2234' }
+            brand: { 500: '#6366f1', 600: '#4f46e5' }
           }
         }
       }
     }
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   </script>
   <style>
-    body { background-color: #0b0f19; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     details > summary::-webkit-details-marker { display: none; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
 
-  <!-- Navbar -->
-  <header class="border-b border-surface-border bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
+  <!-- Header & Navigation Bar -->
+  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md">
-          <i class="fa-solid fa-gamepad text-base"></i>
-        </div>
-        <span class="font-black text-lg tracking-tight text-white">Epic-Claim</span>
+        <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-9 h-9 rounded-xl object-cover shadow-md shadow-indigo-500/20 border border-slate-200 dark:border-slate-700">
+        <span class="font-black text-lg tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
       </a>
 
-      <nav class="flex items-center gap-4 text-xs font-medium">
-        <a href="index.html" class="text-slate-400 hover:text-white transition">Inicio</a>
-        <a href="faq.html" class="text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">FAQ</a>
-        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="text-slate-400 hover:text-white transition">GitHub</a>
+      <!-- Navbar Links & Controls -->
+      <nav class="flex items-center gap-3 sm:gap-4 text-xs font-semibold">
+        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Inicio</a>
+        <a href="faq.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">FAQ</a>
+        <a href="details.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Más Detalles</a>
+        <a href="acerca-de.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Acerca De</a>
+        
+        <!-- Idioma: Salto a la versión en inglés -->
+        <a href="en/faq.html" title="Switch to English" class="flex items-center gap-1 bg-slate-200 dark:bg-slate-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 px-2.5 py-1 rounded-lg text-[11px] font-bold transition">
+          <i class="fa-solid fa-globe text-xs"></i> EN
+        </a>
+
+        <!-- Botón Modo Oscuro / Claro -->
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -46,61 +71,61 @@
   <!-- Contenido Principal -->
   <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
     <div class="text-center mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-3">
         Centro de Ayuda
       </div>
-      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">Preguntas Frecuentes</h1>
-      <p class="text-slate-400 text-sm max-w-lg mx-auto">Respuestas directas extraídas de la aplicación para resolver cualquier duda o problema.</p>
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-3">Preguntas Frecuentes</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-sm max-w-lg mx-auto">Respuestas directas extraídas de la aplicación para resolver cualquier duda o problema.</p>
     </div>
 
     <!-- Acordeón FAQ -->
     <div class="space-y-4">
-      <details class="group bg-surface-card border border-surface-border rounded-2xl p-5" open>
-        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+      <details class="group bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] rounded-2xl p-5 shadow-sm" open>
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base list-none">
           <span>¿Por qué se queda constantemente cargando?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-indigo-500 dark:text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
         </summary>
-        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
           Esto suele ocurrir solo con cuentas nuevas. Deberás iniciar sesión desde el navegador web en tu cuenta de Epic Games y aceptar el «Acuerdo de Licencia de Usuario Final». Una vez aceptado, la app cargará con normalidad.
         </p>
       </details>
 
-      <details class="group bg-surface-card border border-surface-border rounded-2xl p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+      <details class="group bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] rounded-2xl p-5 shadow-sm">
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base list-none">
           <span>¿Por qué los juegos no se reclaman automáticamente sin hacer nada?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-indigo-500 dark:text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
         </summary>
-        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
           Epic Games cuenta con protecciones anti-bot (hCaptcha) y pasarelas de pago de costo cero que requieren confirmación humana obligatoria. Epic-Claim te ahorra tener que escribir contraseñas y navegar por la tienda: te lleva directo a confirmar la orden.
         </p>
       </details>
 
-      <details class="group bg-surface-card border border-surface-border rounded-2xl p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+      <details class="group bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] rounded-2xl p-5 shadow-sm">
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base list-none">
           <span>¿El creador puede ver mis datos de inicio de sesión o contraseñas?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-indigo-500 dark:text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
         </summary>
-        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
           Para nada. Esta aplicación no cuenta con servidores, analíticas ni bases de datos remotas. Las cookies de sesión se guardan única y exclusivamente en tu dispositivo móvil usando almacenamiento cifrado (AES-256). Si borras los datos o desinstalas la app, todo desaparece.
         </p>
       </details>
 
-      <details class="group bg-surface-card border border-surface-border rounded-2xl p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+      <details class="group bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] rounded-2xl p-5 shadow-sm">
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base list-none">
           <span>¿Por qué tengo que iniciar sesión nuevamente después de varios días?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-indigo-500 dark:text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
         </summary>
-        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
           Por motivos de seguridad, Epic Games vence los tokens y cookies periódicamente. Cuando esto pase, solo usa la opción <i>Reiniciar sesión de Cuenta</i> desde el diálogo de cuentas para refrescar el acceso sin borrar tu historial de canjes.
         </p>
       </details>
 
-      <details class="group bg-surface-card border border-surface-border rounded-2xl p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-200 text-sm sm:text-base list-none">
+      <details class="group bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] rounded-2xl p-5 shadow-sm">
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base list-none">
           <span>¿Cuántas cuentas puedo vincular simultáneamente?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-indigo-500 dark:text-indigo-400 group-open:rotate-180 transition-transform duration-200"></i>
         </summary>
-        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
           No hay límite dentro de la aplicación. Puedes añadir todas las que necesites y alternar entre ellas con un toque en la parte superior para canjear en cada una de manera consecutiva.
         </p>
       </details>
@@ -108,16 +133,41 @@
 
     <!-- Enlace de regreso -->
     <div class="mt-12 text-center">
-      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-surface-card hover:bg-surface-highlight border border-surface-border px-4 py-2.5 rounded-xl transition text-slate-300">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] border border-slate-200 dark:border-[#1f293d] px-5 py-2.5 rounded-xl transition text-slate-700 dark:text-slate-300 shadow-sm font-semibold">
         <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
       </a>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-surface-border py-8 text-center text-xs text-slate-500 bg-[#090c14]">
+  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-8 text-center text-xs text-slate-500 bg-slate-100 dark:bg-[#090c14] transition-colors duration-200">
     <p>© 2026 Epic-Claim — Creado por Rogzca. No afiliado con Epic Games, Inc.</p>
   </footer>
+
+  <!-- Script Modo Oscuro -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+
+    updateIcons();
+
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateIcons();
+    });
+  </script>
 
 </body>
 </html>
