@@ -6,9 +6,18 @@
   <title>Capturas y Funciones | Epic-Claim</title>
   <meta name="description" content="Explora en profundidad las funciones y capturas de pantalla de Epic-Claim para Android.">
   
+  <!-- Favicon con tu logo -->
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
+
+  <!-- Google Fonts & Fontshare: Cabinet Grotesk + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome -->
+  <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <script>
@@ -16,8 +25,18 @@
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            display: ['"Cabinet Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          },
           colors: {
-            brand: { 500: '#6366f1', 600: '#4f46e5' }
+            metal: {
+              silver: '#e8eaed',
+              darkPlate: '#111317',
+              borderPlate: '#d0d5dd',
+              accent: '#f97316'
+            }
           }
         }
       }
@@ -29,34 +48,95 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
+
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-hero { font-family: 'Cabinet Grotesk', sans-serif; }
+    .mono { font-family: 'Space Mono', monospace; }
+
+    /* Degradado de luz ambiental metálica */
+    .metallic-gradient {
+      background-color: #f1f3f6;
+      background-image: 
+        radial-gradient(at 90% 10%, rgba(251, 146, 60, 0.12) 0px, transparent 50%),
+        radial-gradient(at 10% 30%, rgba(203, 213, 225, 0.6) 0px, transparent 50%),
+        radial-gradient(at 50% 80%, rgba(148, 163, 184, 0.25) 0px, transparent 60%),
+        linear-gradient(180deg, #fafafb 0%, #e2e5e9 100%);
+      background-attachment: fixed;
+    }
+    .dark .metallic-gradient {
+      background-color: #07080a;
+      background-image: 
+        radial-gradient(at 85% 15%, rgba(249, 115, 22, 0.10) 0px, transparent 45%),
+        radial-gradient(at 15% 40%, rgba(30, 41, 59, 0.5) 0px, transparent 50%),
+        linear-gradient(180deg, #090a0d 0%, #101217 60%, #08090b 100%);
+      background-attachment: fixed;
+    }
+
+    /* Tarjeta translúcida con brillo metálico */
+    .aluminum-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+    }
+    .dark .aluminum-card {
+      background: rgba(17, 20, 26, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.75);
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
-  <!-- Navbar -->
-  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
-          <i class="fa-solid fa-gamepad text-lg"></i>
+  <!-- Encabezado y Barra de Navegación Calibrada (h-20) -->
+  <header class="border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Hardware -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="relative w-9 h-9 rounded-xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xs group-hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-full h-full object-cover">
         </div>
         <div>
-          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
-          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
+          <span class="font-hero font-black text-lg tracking-tight uppercase text-black dark:text-[#e6edf3]">Epic-Claim</span>
+          <span class="block mono text-[10px] text-slate-500 dark:text-slate-400 font-semibold -mt-0.5">v1.0 «Archikós»</span>
         </div>
       </a>
-      
-      <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
-        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Inicio</a>
-        <a href="faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">FAQ</a>
-        <a href="capturas.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Capturas</a>
-        <a href="acerca-de.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Acerca De</a>
-        
-        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
-          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
-          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+
+      <!-- Enlaces del Navbar y Selector de Idioma -->
+      <nav class="flex items-center gap-1.5 sm:gap-3 text-xs font-semibold uppercase tracking-wider">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Inicio</a>
+        <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
+        <a href="details.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition">Más Detalles</a>
+        <a href="acerca-de.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Acerca De</a>
+
+        <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5 hidden sm:block"></div>
+
+        <!-- Botón Selector a Inglés -->
+        <a href="en/details.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
+          <i class="fa-solid fa-globe text-xs"></i> EN
+        </a>
+
+        <!-- Ko-Fi Botón Hardware -->
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs">
+          <i class="fa-solid fa-mug-hot text-[11px]"></i>
+          <span>Ko-Fi</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Botón Modo Oscuro / Claro -->
+        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-xs hidden text-slate-700"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xs hidden text-amber-500"></i>
         </button>
       </nav>
     </div>
@@ -64,24 +144,29 @@
 
   <!-- Contenido Principal -->
   <main class="max-w-5xl mx-auto px-6 py-16 flex-grow">
+    
+    <!-- Encabezado de la Galería -->
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-4">
-        Galería de la Aplicación
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-6 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+        <span class="mono">Galería de la Aplicación</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Capturas y Funciones a Fondo</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
+      <h1 class="font-hero text-4xl sm:text-6xl font-black uppercase tracking-[-0.03em] leading-[1.02] text-black dark:text-[#e6edf3] mb-4">
+        Capturas y Funciones a Fondo
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
         Conoce al detalle cada apartado visual y técnico diseñado para que el reclamo de juegos sea rápido, ligero y sin fricción.
       </p>
     </div>
 
     <!-- Lista de 8 Bloques de Funcionalidades -->
-    <div class="space-y-12">
+    <div class="space-y-10">
       
       <!-- Captura 1 -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
-        <div class="order-2 md:order-1 space-y-3">
-          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Función 01</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Inicio limpio y sin complicaciones!</h2>
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest block">// FUNCIÓN 01</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Inicio limpio y sin complicaciones!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Imagen del juego, sinopsis y botón de canje. Sin opciones ocultas innecesarias que la hagan más lenta. Simple y directo.
           </p>
@@ -90,20 +175,20 @@
           </p>
         </div>
         <div class="order-1 md:order-2 flex flex-col items-center">
-          <img src="https://i.ibb.co/Kp3CnK8r/01.jpg" alt="Inicio de la app" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Inicio de la app</span>
+          <img src="https://i.ibb.co/Kp3CnK8r/01.jpg" alt="Inicio de la app" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Inicio de la app</span>
         </div>
       </div>
 
       <!-- Captura 2 (Invertido) -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
         <div class="order-1 flex flex-col items-center">
-          <img src="https://i.ibb.co/d41bcHHs/02.jpg" alt="Cuentas Infinitas" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Cuentas Infinitas</span>
+          <img src="https://i.ibb.co/d41bcHHs/02.jpg" alt="Cuentas Infinitas" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Cuentas Infinitas</span>
         </div>
-        <div class="order-2 space-y-3">
-          <span class="text-xs font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-wider">Función 02</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Todas tus cuentas en una sola aplicación!</h2>
+        <div class="order-2 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest block">// FUNCIÓN 02</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Todas tus cuentas en una sola aplicación!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             No importa cuantas cuentas tengas. Agrega todas e intercambia entre ellas las veces que sea necesario. El único límite aquí es tus ganas de recordar la cantidad que posees.
           </p>
@@ -111,10 +196,10 @@
       </div>
 
       <!-- Captura 3 -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
-        <div class="order-2 md:order-1 space-y-3">
-          <span class="text-xs font-bold text-violet-500 dark:text-violet-400 uppercase tracking-wider">Función 03</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Ya está en tu biblioteca! ¡No necesitas volverlo a canjear!</h2>
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest block">// FUNCIÓN 03</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Ya está en tu biblioteca! ¡No necesitas volverlo a canjear!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Gracias a la etiqueta roja que te indica cuando ya lo has obtenido, puedes saber que ya posees ese juego en tu biblioteca. No será necesario hacerlo de nuevo.
           </p>
@@ -123,20 +208,20 @@
           </p>
         </div>
         <div class="order-1 md:order-2 flex flex-col items-center">
-          <img src="https://i.ibb.co/9mjTQNvK/03.png" alt="Etiqueta de recordatorio" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Etiqueta de recordatorio</span>
+          <img src="https://i.ibb.co/9mjTQNvK/03.png" alt="Etiqueta de recordatorio" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Etiqueta de recordatorio</span>
         </div>
       </div>
 
       <!-- Captura 4 (Invertido) -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
         <div class="order-1 flex flex-col items-center">
-          <img src="https://i.ibb.co/Xf3W1RZy/04.png" alt="Notificaciones" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Notificaciones</span>
+          <img src="https://i.ibb.co/Xf3W1RZy/04.png" alt="Notificaciones" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Notificaciones</span>
         </div>
-        <div class="order-2 space-y-3">
-          <span class="text-xs font-bold text-amber-500 dark:text-amber-400 uppercase tracking-wider">Función 04</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Notificaciones al instante!</h2>
+        <div class="order-2 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest block">// FUNCIÓN 04</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Notificaciones al instante!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Si existe algún juego gratis disponible, obtén una notificación al instante. Te mostrará los disponibles en ese preciso momento. ¡Incluso puedes configurar el sonido de ésta!
           </p>
@@ -144,29 +229,29 @@
       </div>
 
       <!-- Captura 5 -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
-        <div class="order-2 md:order-1 space-y-3">
-          <span class="text-xs font-bold text-blue-500 dark:text-blue-400 uppercase tracking-wider">Función 05</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Directo y sin obstáculos!</h2>
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest block">// FUNCIÓN 05</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Directo y sin obstáculos!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Al pulsar sobre «Canjear Juego», te lleva directamente al videojuego en cuestión. Nada de buscarlo por ti mismo, nada de esperar a que Epic cargue su lenta página para scrollear hacia abajo en su búsqueda. Simplemente pulsa en «Agregar a la Biblioteca», y listo.
           </p>
         </div>
         <div class="order-1 md:order-2 flex flex-col items-center">
-          <img src="https://i.ibb.co/ns0v1tmx/05.png" alt="Canje directo" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Canje asistido</span>
+          <img src="https://i.ibb.co/ns0v1tmx/05.png" alt="Canje directo" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Canje asistido</span>
         </div>
       </div>
 
       <!-- Captura 6 (Invertido) -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
         <div class="order-1 flex flex-col items-center">
-          <img src="https://i.ibb.co/MxQnZDn6/06.png" alt="Historial" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Historial</span>
+          <img src="https://i.ibb.co/MxQnZDn6/06.png" alt="Historial" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Historial</span>
         </div>
-        <div class="order-2 space-y-3">
-          <span class="text-xs font-bold text-rose-500 dark:text-rose-400 uppercase tracking-wider">Función 06</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Historial de registro!</h2>
+        <div class="order-2 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest block">// FUNCIÓN 06</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Historial de registro!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Encuentra un juego canjeado mediante el buscador, o mira la fecha y hora exacta en cuando canjeaste ese videojuego.
           </p>
@@ -174,29 +259,29 @@
       </div>
 
       <!-- Captura 7 -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
-        <div class="order-2 md:order-1 space-y-3">
-          <span class="text-xs font-bold text-teal-500 dark:text-teal-400 uppercase tracking-wider">Función 07</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Sección de Ajustes!</h2>
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest block">// FUNCIÓN 07</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Sección de Ajustes!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Configura el idioma, el modo oscuro de la aplicación para las horas que quieras o que siga el sistema, configura las notificaciones y su frecuencia de avisos, limpia el caché o elimina de golpe todas las cuentas.
           </p>
         </div>
         <div class="order-1 md:order-2 flex flex-col items-center">
-          <img src="https://i.ibb.co/cSqfdqN0/07.png" alt="Ajustes" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Ajustes</span>
+          <img src="https://i.ibb.co/cSqfdqN0/07.png" alt="Ajustes" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Ajustes</span>
         </div>
       </div>
 
       <!-- Captura 8 (Invertido) -->
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+      <div class="aluminum-card p-6 sm:p-10 rounded-3xl grid md:grid-cols-2 gap-8 items-center">
         <div class="order-1 flex flex-col items-center">
-          <img src="https://i.ibb.co/dw05FFtM/08.png" alt="Acerca De" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
-          <span class="text-[11px] text-slate-400 mt-2 font-medium">Acerca De</span>
+          <img src="https://i.ibb.co/dw05FFtM/08.png" alt="Acerca De" class="rounded-2xl border border-black/10 dark:border-white/10 shadow-xl max-h-[460px] w-auto object-contain">
+          <span class="mono text-[11px] text-slate-500 mt-2.5 font-medium">Acerca De</span>
         </div>
-        <div class="order-2 space-y-3">
-          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Función 08</span>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">¡Resuelve tus dudas!</h2>
+        <div class="order-2 space-y-3.5">
+          <span class="mono text-[11px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest block">// FUNCIÓN 08</span>
+          <h2 class="text-2xl font-bold text-black dark:text-[#e6edf3] tracking-tight">¡Resuelve tus dudas!</h2>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             ¿Quieres saber más acerca de la app? ¿O tienes algunas preguntas con respecto a ésta aplicación y su función? Ingresa a la sección de Acerca De.
           </p>
@@ -209,25 +294,17 @@
     </div>
 
     <!-- Botón Volver -->
-    <div class="mt-16 text-center">
-      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] border border-slate-200 dark:border-[#1f293d] px-5 py-3 rounded-xl transition text-slate-700 dark:text-slate-300 shadow-sm font-semibold">
-        <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+    <div class="mt-14 text-center">
+      <a href="index.html" class="inline-flex items-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-7 py-3.5 rounded-xl font-mono text-xs uppercase font-bold text-black dark:text-slate-200 transition shadow-xs">
+        <i class="fa-solid fa-arrow-left"></i> Volver a la página principal
       </a>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-10 bg-slate-100 dark:bg-[#090c14] text-xs text-slate-500 transition-colors duration-200">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div>
-        <p class="font-semibold text-slate-700 dark:text-slate-400">Epic-Claim — Creado por Rogzca</p>
-        <p class="mt-1">Desarrollado con asistencia de Gemini AI.</p>
-      </div>
-      <div class="flex gap-4">
-        <a href="faq.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">FAQ</a>
-        <a href="capturas.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Capturas</a>
-        <a href="acerca-de.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Acerca De</a>
-      </div>
+  <!-- Footer Metálico -->
+  <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200 text-center">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="font-bold text-black dark:text-[#e6edf3]">© 2026 Epic-Claim — Creado por Rogzca. No afiliado con Epic Games, Inc.</p>
     </div>
   </footer>
 
@@ -246,12 +323,21 @@
         themeToggleLightIcon.classList.add('hidden');
       }
     }
+
     updateIcons();
+
     themeToggleBtn.addEventListener('click', function() {
       document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+
       updateIcons();
     });
   </script>
+
 </body>
 </html>
