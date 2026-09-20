@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features & Screenshots | Epic-Claim</title>
+  <meta name="description" content="Explore in-depth features, screenshots, and architecture behind Epic-Claim for Android.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#6366f1', 600: '#4f46e5' }
+          }
+        }
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between transition-colors duration-200 bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header & Navigation Bar -->
+  <header class="border-b border-slate-200 dark:border-[#1f293d] bg-white/80 dark:bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
+          <i class="fa-solid fa-gamepad text-lg"></i>
+        </div>
+        <div>
+          <span class="font-black text-xl tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent">Epic-Claim</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1">v1.0 «Archikós»</span>
+        </div>
+      </a>
+      
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
+        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">Home</a>
+        <a href="faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">FAQ</a>
+        <a href="details.html" class="text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-500 pb-0.5">Features</a>
+        <a href="about.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition">About</a>
+        
+        <!-- Language Switcher: points to Spanish details -->
+        <a href="../details.html" title="Cambiar a Español" class="flex items-center gap-1 bg-slate-200 dark:bg-slate-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 px-2.5 py-1 rounded-lg text-[11px] font-bold transition">
+          <i class="fa-solid fa-globe text-xs"></i> ES
+        </a>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="w-8 h-8 flex items-center justify-center rounded-xl border border-slate-300 dark:border-[#1f293d] bg-slate-100 dark:bg-[#131926] hover:bg-slate-200 dark:hover:bg-[#1a2234] text-slate-600 dark:text-amber-400 transition cursor-pointer">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-sm"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-sm"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-16 flex-grow">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-4">
+        App Gallery
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Features & In-Depth Walkthrough</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
+        Explore every visual and technical detail designed to make claiming free games fast, lightweight, and frictionless.
+      </p>
+    </div>
+
+    <!-- 8 Feature Blocks -->
+    <div class="space-y-12">
+      
+      <!-- Feature 1 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Feature 01</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Clean & Hassle-Free Feed!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Game artwork, synopsis, and claim button. No hidden or useless menus slowing down your flow. Clean and straightforward.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Just tap «Claim Game», confirm «Add to Library», and you're done. Can't read the whole synopsis? Tap the poster to expand it fully and check when the promo expires.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/Kp3CnK8r/01.jpg" alt="Home Feed" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Home Feed</span>
+        </div>
+      </div>
+
+      <!-- Feature 2 (Inverted) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/d41bcHHs/02.jpg" alt="Unlimited Accounts" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Unlimited Accounts</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-wider">Feature 02</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">All Your Accounts in One App!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            No matter how many accounts you own. Add them all and jump between them as often as needed. The only limit is keeping track of how many you have!
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-violet-500 dark:text-violet-400 uppercase tracking-wider">Feature 03</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Already in Library! No Need to Re-claim!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Thanks to the red status badge indicating you already claimed it, you'll know that title is safely in your library. No duplicate claims needed.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Remember: confirm your claim by tapping the checkmark button so your local log records it and triggers the badge properly.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/9mjTQNvK/03.png" alt="Library Reminder Badge" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Library Reminder Badge</span>
+        </div>
+      </div>
+
+      <!-- Feature 4 (Inverted) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/Xf3W1RZy/04.png" alt="Instant Notifications" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Notifications</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-amber-500 dark:text-amber-400 uppercase tracking-wider">Feature 04</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Instant Notifications!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Whenever a new free game goes live, get notified immediately. View what's currently up for grabs in that exact instant. You can even customize notification alerts and sounds!
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-blue-500 dark:text-blue-400 uppercase tracking-wider">Feature 05</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Direct & Unobstructed Flow!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tapping «Claim Game» takes you straight to the promotional game checkout. No searching manually, no waiting on Epic's heavy web storefront to scroll endlessly. Just tap «Add to Library» and you're set.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/ns0v1tmx/05.png" alt="Direct Claiming" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Assisted Claiming</span>
+        </div>
+      </div>
+
+      <!-- Feature 6 (Inverted) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/MxQnZDn6/06.png" alt="Claim History" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">History</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-rose-500 dark:text-rose-400 uppercase tracking-wider">Feature 06</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">History & Claim Logs!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Find any claimed title using live search, or inspect the exact timestamp showing when each game was claimed on every individual account.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 7 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-2 md:order-1 space-y-3">
+          <span class="text-xs font-bold text-teal-500 dark:text-teal-400 uppercase tracking-wider">Feature 07</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Settings & Preferences!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Adjust the language, toggle the app's Dark Mode manually or sync with system preferences, set notification frequencies, clear web cache, or wipe all accounts at once.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 flex flex-col items-center">
+          <img src="https://i.ibb.co/cSqfdqN0/07.png" alt="Settings" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">Settings</span>
+        </div>
+      </div>
+
+      <!-- Feature 8 (Inverted) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#131926] border border-slate-200 dark:border-[#1f293d] p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="order-1 flex flex-col items-center">
+          <img src="https://i.ibb.co/dw05FFtM/08.png" alt="About Section" class="rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-h-[480px] w-auto object-contain">
+          <span class="text-[11px] text-slate-400 mt-2 font-medium">About</span>
+        </div>
+        <div class="order-2 space-y-3">
+          <span class="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">Feature 08</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Clear Up Your Doubts!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Curious to learn more about the project? Or have questions regarding how the app operates? Jump right into the About and Help section.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Over 10 common questions and technical explanations are laid out with clear answers. If you still have doubts, you can reach out via the provided support mailboxes.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs bg-white dark:bg-[#131926] hover:bg-slate-100 dark:hover:bg-[#1a2234] border border-slate-200 dark:border-[#1f293d] px-5 py-3 rounded-xl transition text-slate-700 dark:text-slate-300 shadow-sm font-semibold">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-[#1f293d] py-10 bg-slate-100 dark:bg-[#090c14] text-xs text-slate-500 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-semibold text-slate-700 dark:text-slate-400">Epic-Claim — Created by Rogzca</p>
+        <p class="mt-1">Developed with Gemini AI assistance.</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="faq.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">FAQ</a>
+        <a href="details.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">Features</a>
+        <a href="about.html" class="hover:text-slate-900 dark:hover:text-slate-300 transition">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+    updateIcons();
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateIcons();
+    });
+  </script>
+</body>
+</html>
