@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frequently Asked Questions | Epic-Claim</title>
-  <meta name="description" content="Direct answers extracted from the application to resolve any questions or issues regarding Epic-Claim.">
+  <title>Epic-Claim | Claim your Epic Games freebies on Android</title>
+  <meta name="description" content="Claim weekly free games from Epic Games in seconds directly on your Android device. Instant multi-account support, encrypted history, and Thursday reset reminders.">
   
   <!-- Favicon with logo -->
   <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
@@ -53,9 +53,6 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-hero { font-family: 'Cabinet Grotesk', sans-serif; }
     .mono { font-family: 'Space Mono', monospace; }
-
-    /* Hide native accordion arrow */
-    details > summary::-webkit-details-marker { display: none; }
 
     /* Metallic ambient gradient */
     .metallic-gradient {
@@ -112,7 +109,7 @@
 
       <!-- Mobile / Narrow-Window Controls: ES Switcher, Theme & Hamburger -->
       <div class="flex items-center gap-2 lg:hidden shrink-0">
-        <a href="../faq.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
+        <a href="../index.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
           <i class="fa-solid fa-globe text-xs"></i> ES
         </a>
         <button id="theme-toggle-mobile" type="button" aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
@@ -127,15 +124,15 @@
 
       <!-- Navbar Links & Controls (Desktop lg:) -->
       <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold uppercase tracking-wider shrink-0">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Home</a>
-        <a href="faq.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition whitespace-nowrap">FAQ</a>
+        <a href="index.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition whitespace-nowrap">Home</a>
+        <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">FAQ</a>
         <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Features</a>
         <a href="about.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">About</a>
 
         <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5"></div>
 
-        <!-- Language Switcher: points to Spanish FAQ -->
-        <a href="../faq.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
+        <!-- Language Switcher: Points back to Spanish root -->
+        <a href="../index.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
           <i class="fa-solid fa-globe text-xs"></i> ES
         </a>
 
@@ -162,8 +159,8 @@
     <!-- Mobile Dropdown Menu (< lg) -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#111317]/95 backdrop-blur-xl px-6 py-5 space-y-4">
       <nav class="flex flex-col gap-2 text-xs font-semibold uppercase tracking-wider">
-        <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Home</a>
-        <a href="faq.html" class="px-4 py-2.5 rounded-xl bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs">FAQ</a>
+        <a href="index.html" class="px-4 py-2.5 rounded-xl bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs">Home</a>
+        <a href="faq.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
         <a href="details.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Features</a>
         <a href="about.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">About</a>
       </nav>
@@ -180,119 +177,191 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-6 py-16 flex-grow">
+  <!-- Hero Section -->
+  <main class="flex-grow">
     
-    <!-- Section Header -->
-    <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-6 shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-        <span class="mono">Help Center</span>
-      </div>
-      <h1 class="font-hero text-4xl sm:text-6xl font-black uppercase tracking-[-0.03em] leading-[1.02] text-black dark:text-[#e6edf3] mb-4">
-        Frequently Asked Questions
-      </h1>
-      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-lg mx-auto leading-relaxed font-normal">
-        Direct answers extracted from the application to resolve any questions or issues.
-      </p>
-    </div>
-
-    <!-- FAQ Accordion (Closed by default) -->
-    <div class="space-y-4">
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-16 text-center">
       
-      <!-- Question 1 -->
-      <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
-        <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>Why is it stuck constantly loading?</span>
-          <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
-            <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
+      <!-- Release Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-8 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
+        <span class="mono">Version 1.0 «Archikós» Available</span>
+      </div>
+
+      <!-- Hero Heading in Cabinet Grotesk -->
+      <h1 class="font-hero text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-[-0.03em] leading-[1.02] max-w-4xl mx-auto mb-6 text-black dark:text-[#e6edf3]">
+        Claim Epic Games weekly freebies <span class="text-orange-600 dark:text-orange-500">in just 2 or 3 taps</span>
+      </h1>
+
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Built for players managing multiple accounts who hate constantly logging in and out. Browse active titles, switch profiles seamlessly, and claim games fast straight from your Android device.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.apk"
+           download="Epic-Claim.v1.0.Archikos.apk"
+           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
+          <i class="fa-brands fa-android text-base"></i>
+          Download APK v1.0 (14.12 MB)
+        </a>
+        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-6 py-4 rounded-xl font-mono text-xs uppercase font-bold tracking-wider transition text-slate-800 dark:text-slate-200">
+          <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-500"></i> FAQ & Help
+        </a>
+      </div>
+
+      <!-- Quick Metrics Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+        
+        <div class="aluminum-card p-5 rounded-2xl">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            <i class="fa-solid fa-users text-orange-600 dark:text-orange-500 mr-1.5 text-sm"></i> Unlimited
+          </span>
+          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Multi-account support</span>
+        </div>
+
+        <div class="aluminum-card p-5 rounded-2xl">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            <i class="fa-solid fa-lock text-emerald-600 dark:text-emerald-400 mr-1.5 text-sm"></i> AES-256
+          </span>
+          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Encrypted local storage</span>
+        </div>
+
+        <div class="aluminum-card p-5 rounded-2xl">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            <i class="fa-solid fa-shield text-blue-600 dark:text-blue-400 mr-1.5 text-sm"></i> 0 Servers
+          </span>
+          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">100% private on-device</span>
+        </div>
+
+        <div class="aluminum-card p-5 rounded-2xl">
+          <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            <i class="fa-solid fa-bell text-amber-600 dark:text-amber-400 mr-1.5 text-sm"></i> Thursdays
+          </span>
+          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Weekly reset alerts</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Core Features Grid -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-black dark:text-[#e6edf3] tracking-tight mb-3">
+          Designed to save you time
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm max-w-xl mx-auto">
+          Everything you need to never miss a weekly giveaway without dealing with credentials or bloated browsers.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Feature 1 -->
+        <div class="aluminum-card p-8 rounded-3xl flex flex-col justify-between transition hover:-translate-y-0.5">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-orange-600 dark:text-orange-500 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
+              Instant Multi-Account
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Store as many Epic Games accounts as you want. Switch between them with a single tap from the top bar without logging out.
+            </p>
           </div>
-        </summary>
-        <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            This usually happens only with brand new accounts. You must sign in via your web browser to your Epic Games account and accept the «End User License Agreement». Once accepted, the app will load normally.
+          <div class="mt-8 pt-4 border-t border-black/5 dark:border-white/5 mono text-[11px] text-slate-500 font-semibold">
+            &gt; PRESERVE SESSIONS
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="aluminum-card p-8 rounded-3xl flex flex-col justify-between transition hover:-translate-y-0.5">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
+              2-Tap Claiming
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Opens the official $0 checkout gateway directly with your pre-loaded session. Confirm order and mark it done with one touch.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-black/5 dark:border-white/5 mono text-[11px] text-slate-500 font-semibold">
+            &gt; DIRECT CHECKOUT
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="aluminum-card p-8 rounded-3xl flex flex-col justify-between transition hover:-translate-y-0.5">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-black/5 dark:bg-white/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6 text-lg border border-black/10 dark:border-white/10">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <h3 class="text-lg font-bold text-black dark:text-[#e6edf3] mb-2.5 tracking-tight">
+              Per-Account History
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Keeps an exact timestamp log for every claimed title per profile, featuring live search and "In Library" badges.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-black/5 dark:border-white/5 mono text-[11px] text-slate-500 font-semibold">
+            &gt; LOCAL AUDIT
+          </div>
+        </div>
+
+      </div>
+
+      <!-- More Features Button -->
+      <div class="mt-10 text-center">
+        <a href="details.html" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 font-mono text-xs uppercase font-bold text-black dark:text-slate-200 transition shadow-xs group">
+          <span>View all features & screenshots</span>
+          <i class="fa-solid fa-arrow-right text-orange-600 dark:text-orange-500 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Support / Ko-Fi Section -->
+    <section class="max-w-4xl mx-auto px-6 pb-16">
+      <div class="aluminum-card p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <span class="mono text-[11px] uppercase tracking-widest text-orange-600 dark:text-orange-500 font-bold block mb-1">INDEPENDENT PROJECT</span>
+          <h3 class="font-display text-2xl font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            Find this project useful?
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-lg">
+            Epic-Claim is a personal, open-source project. If you enjoy it and want to support ongoing updates, consider buying me a coffee.
           </p>
         </div>
-      </details>
-
-      <!-- Question 2 -->
-      <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
-        <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>Why don't games get claimed completely automatically without touching anything?</span>
-          <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
-            <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
-          </div>
-        </summary>
-        <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Epic Games utilizes anti-bot protection (hCaptcha) and zero-cost checkout gateways that strictly require human confirmation. Epic-Claim eliminates the pain of typing credentials and navigating the storefront: it drops you directly at the order confirmation step.
-          </p>
-        </div>
-      </details>
-
-      <!-- Question 3 -->
-      <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
-        <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>Can the creator view my login credentials or passwords?</span>
-          <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
-            <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
-          </div>
-        </summary>
-        <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Not at all. This application operates with zero external servers, analytics, or remote databases. Session cookies are stored solely on your device using hardware-backed encryption (AES-256). If you clear app data or uninstall, everything is wiped permanently.
-          </p>
-        </div>
-      </details>
-
-      <!-- Question 4 -->
-      <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
-        <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>Why do I need to log in again after several days?</span>
-          <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
-            <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
-          </div>
-        </summary>
-        <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            For security reasons, Epic Games periodically expires session tokens and cookies. When this occurs, simply use the <i>Re-login Account</i> option from the account switcher to refresh credentials without losing your local claim history.
-          </p>
-        </div>
-      </details>
-
-      <!-- Question 5 -->
-      <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
-        <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>How many accounts can I connect simultaneously?</span>
-          <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
-            <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
-          </div>
-        </summary>
-        <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            There is no hard limit within the app. You can link as many profiles as you require and switch between them seamlessly with a single tap on the top bar to claim consecutively.
-          </p>
-        </div>
-      </details>
-
-    </div>
-
-    <!-- Return Link -->
-    <div class="mt-14 text-center">
-      <a href="index.html" class="inline-flex items-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-7 py-3.5 rounded-xl font-mono text-xs uppercase font-bold text-black dark:text-slate-200 transition shadow-xs">
-        <i class="fa-solid fa-arrow-left"></i> Back to Home
-      </a>
-    </div>
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
+          <i class="fa-solid fa-mug-hot"></i> Support on Ko-Fi
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- Metallic Footer -->
-  <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200 text-center">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="font-bold text-black dark:text-[#e6edf3]">© 2026 Epic-Claim — Created by Rogzca. Not affiliated with Epic Games, Inc.</p>
+  <!-- Footer -->
+  <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-center sm:text-left">
+        <p class="font-bold text-black dark:text-[#e6edf3]">Epic-Claim — Created by Rogzca</p>
+        <p class="mt-1 text-slate-500">Developed with Gemini AI assistance. Personal use & open-source project.</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4 text-[11px] uppercase font-bold">
+        <a href="faq.html" class="hover:text-black dark:hover:text-white transition">FAQ</a>
+        <a href="details.html" class="hover:text-black dark:hover:text-white transition">Features</a>
+        <a href="about.html" class="hover:text-black dark:hover:text-white transition">About</a>
+        <a href="mailto:soporte_rogzca@yahoo.com" class="hover:text-black dark:hover:text-white transition">Support</a>
+        <a href="mailto:feedback_rogzca@yahoo.com" class="hover:text-black dark:hover:text-white transition">Feedback</a>
+        <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="hover:text-black dark:hover:text-white transition">GitHub</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Theme Script -->
+  <!-- Scripts: Theme & Mobile Hamburger Menu -->
   <script>
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
