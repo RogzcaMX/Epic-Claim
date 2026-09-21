@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preguntas Frecuentes | Epic-Claim</title>
-  <meta name="description" content="Respuestas directas extraídas de la aplicación para resolver cualquier duda o problema sobre Epic-Claim.">
+  <title>Frequently Asked Questions | Epic-Claim</title>
+  <meta name="description" content="Direct answers extracted from the application to resolve any questions or issues regarding Epic-Claim.">
   
-  <!-- Favicon con tu logo -->
+  <!-- Favicon with logo -->
   <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
 
   <!-- Google Fonts & Fontshare: Cabinet Grotesk + Plus Jakarta Sans + Space Mono -->
@@ -54,10 +54,10 @@
     .font-hero { font-family: 'Cabinet Grotesk', sans-serif; }
     .mono { font-family: 'Space Mono', monospace; }
 
-    /* Ocultar marcador nativo de acordeón */
+    /* Hide native accordion arrow */
     details > summary::-webkit-details-marker { display: none; }
 
-    /* Degradado de luz ambiental metálica */
+    /* Metallic ambient gradient */
     .metallic-gradient {
       background-color: #f1f3f6;
       background-image: 
@@ -76,7 +76,7 @@
       background-attachment: fixed;
     }
 
-    /* Tarjeta translúcida con brillo metálico */
+    /* Translucent brushed aluminum card */
     .aluminum-card {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(16px);
@@ -95,7 +95,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
-  <!-- Encabezado y Barra de Navegación Estática -->
+  <!-- Calibrated Navbar (Static / Relative z-50 to prevent overlap) -->
   <header class="border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-[#111317]/90 backdrop-blur-xl relative z-50 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
       
@@ -110,58 +110,62 @@
         </div>
       </a>
 
-      <!-- Controles móviles: Selector EN, Tema y Hamburguesa -->
+      <!-- Mobile / Narrow-Window Controls: ES Switcher, Theme & Hamburger -->
       <div class="flex items-center gap-2 lg:hidden shrink-0">
-        <a href="en/faq.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
-          <i class="fa-solid fa-globe text-xs"></i> EN
+        <a href="../faq.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
+          <i class="fa-solid fa-globe text-xs"></i> ES
         </a>
-        <button id="theme-toggle-mobile" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
+        <button id="theme-toggle-mobile" type="button" aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer">
           <i class="fa-solid fa-moon text-xs dark:hidden text-slate-700"></i>
           <i class="fa-solid fa-sun text-xs hidden dark:inline text-amber-500"></i>
         </button>
-        <button id="menu-toggle" type="button" aria-label="Menú principal" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer text-slate-800 dark:text-slate-200">
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer text-slate-800 dark:text-slate-200">
           <i id="menu-icon-open" class="fa-solid fa-bars text-sm"></i>
           <i id="menu-icon-close" class="fa-solid fa-xmark text-sm hidden"></i>
         </button>
       </div>
 
-      <!-- Enlaces del Navbar Desktop -->
+      <!-- Navbar Links & Controls (Desktop lg:) -->
       <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold uppercase tracking-wider shrink-0">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Inicio</a>
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Home</a>
         <a href="faq.html" class="px-3.5 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition whitespace-nowrap">FAQ</a>
-        <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Más Detalles</a>
-        <a href="acerca-de.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Acerca De</a>
+        <a href="details.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Features</a>
+        <a href="about.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">About</a>
 
         <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5"></div>
 
-        <a href="en/faq.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
-          <i class="fa-solid fa-globe text-xs"></i> EN
+        <!-- Language Switcher: points to Spanish FAQ -->
+        <a href="../faq.html" title="Cambiar a Español" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
+          <i class="fa-solid fa-globe text-xs"></i> ES
         </a>
 
+        <!-- Ko-Fi Button -->
         <a href="https://ko-fi.com/rogzca" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs whitespace-nowrap">
           <i class="fa-solid fa-mug-hot text-[11px]"></i>
           <span>Ko-Fi</span>
         </a>
 
+        <!-- GitHub -->
         <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition whitespace-nowrap">
           <i class="fa-brands fa-github text-sm"></i>
           <span>GitHub</span>
         </a>
 
-        <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0">
           <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-xs hidden text-slate-700"></i>
           <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xs hidden text-amber-500"></i>
         </button>
       </nav>
     </div>
 
-    <!-- Menú Desplegable (< lg) -->
+    <!-- Mobile Dropdown Menu (< lg) -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#111317]/95 backdrop-blur-xl px-6 py-5 space-y-4">
       <nav class="flex flex-col gap-2 text-xs font-semibold uppercase tracking-wider">
-        <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Inicio</a>
+        <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Home</a>
         <a href="faq.html" class="px-4 py-2.5 rounded-xl bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs">FAQ</a>
-        <a href="details.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Más Detalles</a>
-        <a href="acerca-de.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Acerca De</a>
+        <a href="details.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Features</a>
+        <a href="about.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">About</a>
       </nav>
       <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-3">
         <a href="https://ko-fi.com/rogzca" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs">
@@ -176,119 +180,119 @@
     </div>
   </header>
 
-  <!-- Contenido Principal -->
+  <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-6 py-16 flex-grow">
     
-    <!-- Encabezado de la Sección -->
+    <!-- Section Header -->
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-6 shadow-xs">
         <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-        <span class="mono">Centro de Ayuda</span>
+        <span class="mono">Help Center</span>
       </div>
       <h1 class="font-hero text-4xl sm:text-6xl font-black uppercase tracking-[-0.03em] leading-[1.02] text-black dark:text-[#e6edf3] mb-4">
-        Preguntas Frecuentes
+        Frequently Asked Questions
       </h1>
       <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-lg mx-auto leading-relaxed font-normal">
-        Respuestas directas extraídas de la aplicación para resolver cualquier duda o problema.
+        Direct answers extracted from the application to resolve any questions or issues.
       </p>
     </div>
 
-    <!-- Acordeón FAQ -->
+    <!-- FAQ Accordion (Closed by default) -->
     <div class="space-y-4">
       
-      <!-- Pregunta 1 (Cerrada por defecto) -->
+      <!-- Question 1 -->
       <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
         <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>¿Por qué se queda constantemente cargando?</span>
+          <span>Why is it stuck constantly loading?</span>
           <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
             <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
           </div>
         </summary>
         <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Esto suele ocurrir solo con cuentas nuevas. Deberás iniciar sesión desde el navegador web en tu cuenta de Epic Games y aceptar el «Acuerdo de Licencia de Usuario Final». Una vez aceptado, la app cargará con normalidad.
+            This usually happens only with brand new accounts. You must sign in via your web browser to your Epic Games account and accept the «End User License Agreement». Once accepted, the app will load normally.
           </p>
         </div>
       </details>
 
-      <!-- Pregunta 2 -->
+      <!-- Question 2 -->
       <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
         <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>¿Por qué los juegos no se reclaman automáticamente sin hacer nada?</span>
+          <span>Why don't games get claimed completely automatically without touching anything?</span>
           <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
             <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
           </div>
         </summary>
         <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Epic Games cuenta con protecciones anti-bot (hCaptcha) y pasarelas de pago de costo cero que requieren confirmación humana obligatoria. Epic-Claim te ahorra tener que escribir contraseñas y navegar por la tienda: te lleva directo a confirmar la orden.
+            Epic Games utilizes anti-bot protection (hCaptcha) and zero-cost checkout gateways that strictly require human confirmation. Epic-Claim eliminates the pain of typing credentials and navigating the storefront: it drops you directly at the order confirmation step.
           </p>
         </div>
       </details>
 
-      <!-- Pregunta 3 -->
+      <!-- Question 3 -->
       <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
         <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>¿El creador puede ver mis datos de inicio de sesión o contraseñas?</span>
+          <span>Can the creator view my login credentials or passwords?</span>
           <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
             <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
           </div>
         </summary>
         <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Para nada. Esta aplicación no cuenta con servidores, analíticas ni bases de datos remotas. Las cookies de sesión se guardan única y exclusivamente en tu dispositivo móvil usando almacenamiento cifrado (AES-256). Si borras los datos o desinstalas la app, todo desaparece.
+            Not at all. This application operates with zero external servers, analytics, or remote databases. Session cookies are stored solely on your device using hardware-backed encryption (AES-256). If you clear app data or uninstall, everything is wiped permanently.
           </p>
         </div>
       </details>
 
-      <!-- Pregunta 4 -->
+      <!-- Question 4 -->
       <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
         <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>¿Por qué tengo que iniciar sesión nuevamente después de varios días?</span>
+          <span>Why do I need to log in again after several days?</span>
           <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
             <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
           </div>
         </summary>
         <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Por motivos de seguridad, Epic Games vence los tokens y cookies periódicamente. Cuando esto pase, solo usa la opción <i>Reiniciar sesión de Cuenta</i> desde el diálogo de cuentas para refrescar el acceso sin borrar tu historial de canjes.
+            For security reasons, Epic Games periodically expires session tokens and cookies. When this occurs, simply use the <i>Re-login Account</i> option from the account switcher to refresh credentials without losing your local claim history.
           </p>
         </div>
       </details>
 
-      <!-- Pregunta 5 -->
+      <!-- Question 5 -->
       <details class="group aluminum-card rounded-3xl p-6 sm:p-7 transition-all duration-200">
         <summary class="flex justify-between items-center cursor-pointer font-bold text-black dark:text-[#e6edf3] text-base sm:text-lg list-none tracking-tight select-none">
-          <span>¿Cuántas cuentas puedo vincular simultáneamente?</span>
+          <span>How many accounts can I connect simultaneously?</span>
           <div class="w-8 h-8 rounded-xl bg-black/5 dark:bg-white/10 flex items-center justify-center border border-black/10 dark:border-white/10 shrink-0 ml-4">
             <i class="fa-solid fa-chevron-down text-xs text-orange-600 dark:text-orange-500 group-open:rotate-180 transition-transform duration-200"></i>
           </div>
         </summary>
         <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5">
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            No hay límite dentro de la aplicación. Puedes añadir todas las que necesites y alternar entre ellas con un toque en la parte superior para canjear en cada una de manera consecutiva.
+            There is no hard limit within the app. You can link as many profiles as you require and switch between them seamlessly with a single tap on the top bar to claim consecutively.
           </p>
         </div>
       </details>
 
     </div>
 
-    <!-- Enlace de regreso -->
+    <!-- Return Link -->
     <div class="mt-14 text-center">
       <a href="index.html" class="inline-flex items-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-7 py-3.5 rounded-xl font-mono text-xs uppercase font-bold text-black dark:text-slate-200 transition shadow-xs">
-        <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
       </a>
     </div>
   </main>
 
-  <!-- Footer Metálico -->
+  <!-- Metallic Footer -->
   <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200 text-center">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="font-bold text-black dark:text-[#e6edf3]">© 2026 Epic-Claim — Creado por Rogzca. No afiliado con Epic Games, Inc.</p>
+      <p class="font-bold text-black dark:text-[#e6edf3]">© 2026 Epic-Claim — Created by Rogzca. Not affiliated with Epic Games, Inc.</p>
     </div>
   </footer>
 
-  <!-- Script Modo Oscuro -->
+  <!-- Theme Script -->
   <script>
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
