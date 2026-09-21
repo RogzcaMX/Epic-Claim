@@ -92,11 +92,11 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
-  <!-- Encabezado y Barra de Navegación Calibrada -->
-  <header class="border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-xl sticky top-0 z-55 transition-colors duration-200">
+  <!-- Encabezado y Barra de Navegación Estática -->
+  <header class="border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-[#111317]/90 backdrop-blur-xl relative z-50 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
       
-      <!-- Brand Hardware (Con whitespace-nowrap y shrink-0 estricto) -->
+      <!-- Brand Hardware -->
       <a href="index.html" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
         <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xs group-hover:scale-105 transition-transform shrink-0">
           <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-full h-full object-cover">
@@ -107,7 +107,7 @@
         </div>
       </a>
 
-      <!-- Controles para pantallas medianas/pequeñas (< lg): Selector EN, Tema y Hamburguesa -->
+      <!-- Controles móviles: Selector EN, Tema y Hamburguesa -->
       <div class="flex items-center gap-2 lg:hidden shrink-0">
         <a href="en/details.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
           <i class="fa-solid fa-globe text-xs"></i> EN
@@ -122,7 +122,7 @@
         </button>
       </div>
 
-      <!-- Enlaces del Navbar Desktop (Visible solo en lg: en adelante) -->
+      <!-- Enlaces del Navbar Desktop -->
       <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold uppercase tracking-wider shrink-0">
         <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">Inicio</a>
         <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">FAQ</a>
@@ -131,24 +131,20 @@
 
         <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5"></div>
 
-        <!-- Botón Selector a Inglés Desktop -->
         <a href="en/details.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
           <i class="fa-solid fa-globe text-xs"></i> EN
         </a>
 
-        <!-- Ko-Fi Botón Hardware -->
         <a href="https://ko-fi.com/rogzca" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs whitespace-nowrap">
           <i class="fa-solid fa-mug-hot text-[11px]"></i>
           <span>Ko-Fi</span>
         </a>
 
-        <!-- GitHub -->
         <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition whitespace-nowrap">
           <i class="fa-brands fa-github text-sm"></i>
           <span>GitHub</span>
         </a>
 
-        <!-- Botón Modo Oscuro / Claro Desktop -->
         <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0">
           <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-xs hidden text-slate-700"></i>
           <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xs hidden text-amber-500"></i>
@@ -157,7 +153,7 @@
     </div>
 
     <!-- Menú Desplegable (< lg) -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-black/10 dark:border-white/10 bg-white/90 dark:bg-[#111317]/95 backdrop-blur-xl px-6 py-5 space-y-4">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#111317]/95 backdrop-blur-xl px-6 py-5 space-y-4">
       <nav class="flex flex-col gap-2 text-xs font-semibold uppercase tracking-wider">
         <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">Inicio</a>
         <a href="faq.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition">FAQ</a>
