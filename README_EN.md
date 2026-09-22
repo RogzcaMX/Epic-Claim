@@ -2,15 +2,13 @@
 
 <p align="center">
   <a href="README.md">
-    <kbd style="background-color: #FA9191; color: #404040; font-size: 20px; padding: 15px 30px; border-radius: 6px; font-weight: bold; border: 4px solid #000000;">
-      🌐 Leer en Español
-    </kbd>
+    <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Leer%20en%20Espa%C3%B1ol-FA9191?style=for-the-badge&logoColor=black&labelColor=FA9191" height="42" alt="Leer en Español">
   </a>
 </p>
-<br>
+
 <br>
 
-<h1 style="font-size: 3rem; margin-bottom: 5;">
+<h1 align="center">
   🎮 Epic-Claim
 </h1>
 
