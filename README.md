@@ -2,15 +2,22 @@
 
 <p align="center">
   <a href="README_EN.md">
-    <b>🌐 Read this in English →</b>
+    <kbd style="background-color: #FA9191; color: #404040; font-size: 20px; padding: 15px 30px; border-radius: 6px; font-weight: bold; border: 4px solid #000000;">
+      🌐 Read this in English
+    </kbd>
   </a>
 </p>
+<br>
+<br>
 
-# 🎮 Epic-Claim
+<h1 style="font-size: 3rem; margin-bottom: 5;">
+  🎮 Epic-Claim
+</h1>
+
 ### Reclama tus juegos gratis de Epic Games en Android en 2 o 3 toques
 
 [![Release](https://img.shields.io/github/v/release/RogzcaMX/Epic-Claim?color=6366f1&style=for-the-badge&logo=android)](https://github.com/RogzcaMX/Epic-Claim/releases)
-[![License](https://img.shields.io/badge/License-Open%20Source-emerald?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Open%20Source-emerald?style=for-the-badge)
 [![Platform](https://img.shields.io/badge/Platform-Android-blue?style=for-the-badge&logo=android)](https://www.android.com/)
 [![Ko-Fi](https://img.shields.io/badge/Ko--Fi-Buy%20a%20Coffee-ff5e5b?style=for-the-badge&logo=kofi)](https://ko-fi.com/rogzca)
 
@@ -51,17 +58,6 @@
 2. Descarga el archivo `.apk` de la versión más reciente (ej. `Epic-Claim.v1.0.Archikos.apk`).
 3. Abre el archivo en tu dispositivo Android y acepta los permisos de instalación desde orígenes desconocidos si el sistema lo solicita.
 4. ¡Listo! Ya puedes vincular tus cuentas.
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-- **Lenguaje:** Kotlin
-- **UI:** Jetpack Compose & Material Design 3
-- **Red:** Retrofit 2 & Gson (API pública de Epic Games Store)
-- **Carga de Imágenes:** Coil
-- **Segundo Plano:** Android Jetpack WorkManager
-- **Seguridad y Persistencia:** AndroidX Security Crypto (`EncryptedSharedPreferences`) & SharedPreferences
 
 ---
 
