@@ -1,5 +1,11 @@
 <div align="center">
 
+<p align="center">
+  <a href="README_EN.md">
+    <b>🌐 Read this in English →</b>
+  </a>
+</p>
+
 # 🎮 Epic-Claim
 ### Reclama tus juegos gratis de Epic Games en Android en 2 o 3 toques
 
