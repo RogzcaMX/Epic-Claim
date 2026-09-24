@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epic-Claim | Reclama tus juegos gratis de Epic Games en Android</title>
-  <meta name="description" content="Reclama los juegos gratis semanales de Epic Games en segundos desde tu Android. Soporte multicuenta instantáneo, historial cifrado y alertas los jueves.">
+  <title>Epic-Claim | Reclama tus juegos gratis de Epic Games en Android y Windows</title>
+  <meta name="description" content="Reclama los juegos gratis semanales de Epic Games en segundos desde tu Android o Windows. Soporte multicuenta instantáneo, historial cifrado y alertas los jueves.">
   
   <!-- Favicon con tu logo -->
   <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
@@ -92,11 +92,11 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between metallic-gradient text-slate-900 dark:text-[#cbd5e1] transition-colors duration-150 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
-  <!-- Encabezado y Barra de Navegación Estática (Fix real sin traslape) -->
-  <header class="border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-[#111317]/90 backdrop-blur-xl relative z-50 transition-colors duration-200">
+  <!-- Encabezado y Barra de Navegación Estática -->
+  <header class="border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-[#111317]/90 backdrop-blur-xl relative z-55 transition-colors duration-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
       
-      <!-- Brand Hardware (Con whitespace-nowrap y shrink-0 estricto) -->
+      <!-- Brand Hardware -->
       <a href="index.html" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
         <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xs group-hover:scale-105 transition-transform shrink-0">
           <img src="https://i.ibb.co/VchdQ5dQ/app-logo.jpg" alt="Epic-Claim Logo" class="w-full h-full object-cover">
@@ -107,7 +107,7 @@
         </div>
       </a>
 
-      <!-- Controles para pantallas medianas/pequeñas (< lg): Selector EN, Tema y Hamburguesa -->
+      <!-- Controles para pantallas móviles (< lg) -->
       <div class="flex items-center gap-2 lg:hidden shrink-0">
         <a href="en/index.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1.5 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1">
           <i class="fa-solid fa-globe text-xs"></i> EN
@@ -122,7 +122,7 @@
         </button>
       </div>
 
-      <!-- Enlaces del Navbar Desktop (Visible solo en lg: en adelante) -->
+      <!-- Enlaces del Navbar Desktop -->
       <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold uppercase tracking-wider shrink-0">
         <a href="index.html" class="px-3 py-1.5 rounded-lg bg-black text-white dark:bg-zinc-200 dark:text-black font-bold shadow-xs transition whitespace-nowrap">Inicio</a>
         <a href="faq.html" class="px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 transition whitespace-nowrap">FAQ</a>
@@ -131,24 +131,20 @@
 
         <div class="h-4 w-[1px] bg-black/10 dark:bg-white/10 mx-0.5"></div>
 
-        <!-- Botón Selector a Inglés Desktop -->
         <a href="en/index.html" title="Switch to English" class="mono text-[11px] font-bold px-2.5 py-1 rounded-md border border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white transition flex items-center gap-1 whitespace-nowrap">
           <i class="fa-solid fa-globe text-xs"></i> EN
         </a>
 
-        <!-- Ko-Fi Botón Hardware -->
         <a href="https://ko-fi.com/rogzca" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-bold hover:bg-amber-500 hover:text-black transition shadow-xs whitespace-nowrap">
           <i class="fa-solid fa-mug-hot text-[11px]"></i>
           <span>Ko-Fi</span>
         </a>
 
-        <!-- GitHub -->
         <a href="https://github.com/RogzcaMX/Epic-Claim" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/15 dark:border-white/15 text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 text-xs font-bold transition whitespace-nowrap">
           <i class="fa-brands fa-github text-sm"></i>
           <span>GitHub</span>
         </a>
 
-        <!-- Botón Modo Oscuro / Claro Desktop -->
         <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-lg border border-black/15 dark:border-white/15 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0">
           <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-xs hidden text-slate-700"></i>
           <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xs hidden text-amber-500"></i>
@@ -177,7 +173,7 @@
     </div>
   </header>
 
-  <!-- Hero Principal (flujo natural sin colisión de z-index/sticky) -->
+  <!-- Hero Principal -->
   <main class="flex-grow">
     
     <section class="max-w-5xl mx-auto px-6 pt-12 pb-16 text-center">
@@ -185,32 +181,75 @@
       <!-- Badge de Versión -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-8 shadow-xs">
         <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
-        <span class="mono">Versión 1.0 «Archikós» disponible</span>
+        <span class="mono">Versión 1.0 «Archikós» disponible (Android & Windows)</span>
       </div>
 
-      <!-- Titular Principal con Tono Perlado en Modo Oscuro -->
+      <!-- Titular Principal -->
       <h1 class="font-hero text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-[-0.03em] leading-[1.02] max-w-4xl mx-auto mb-6 text-black dark:text-[#e6edf3]">
         Reclama los juegos gratis de Epic Games <span class="text-orange-600 dark:text-orange-500">en solo 2 o 3 toques</span>
       </h1>
 
       <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-        Diseñada para quienes tienen varias cuentas y les da flojera iniciar y cerrar sesión constantemente. Consulta los títulos activos, alterna perfiles y canjea rápido directo desde tu teléfono Android.
+        Diseñada para quienes tienen varias cuentas y les da flojera iniciar y cerrar sesión constantemente. Consulta los títulos activos, alterna perfiles y canjea rápido directo desde tu teléfono Android o PC con Windows.
       </p>
 
-      <!-- Botones de Acción -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+      <!-- Botones de Acción (Android + Desplegable Windows con x64, x32, Portable) -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mb-16 relative">
+        
+        <!-- Descarga Android -->
         <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.apk"
            download="Epic-Claim.v1.0.Archikos.apk"
            class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
           <i class="fa-brands fa-android text-base"></i>
-          Descargar APK v1.0 (14.12 MB)
+          <span>APK Android (14.1 MB)</span>
         </a>
+
+        <!-- Contenedor Desplegable Windows -->
+        <div class="relative w-full sm:w-auto text-left" id="windows-dropdown-container">
+          <button type="button" id="win-dropdown-btn"
+                  class="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-3 border border-black/20 dark:border-white/20 bg-white/70 dark:bg-black/50 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition text-slate-800 dark:text-slate-200 cursor-pointer shadow-xs">
+            <div class="flex items-center gap-2">
+              <i class="fa-brands fa-windows text-base text-blue-600 dark:text-blue-400"></i>
+              <span>Windows 10/11 ▾</span>
+            </div>
+            <i class="fa-solid fa-chevron-down text-[10px] sm:ml-2"></i>
+          </button>
+
+          <!-- Menú desplegable flotante de Windows -->
+          <div id="win-dropdown-menu" class="hidden sm:absolute sm:right-0 mt-2 w-full sm:w-72 aluminum-card rounded-2xl p-2 shadow-2xl z-50 flex flex-col gap-1 text-xs">
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.x64.Windows.exe"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Windows x64 (.exe)</span>
+                <span class="text-[10px] text-slate-500">Recomendado (64-bit)</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">4.14 MB</span>
+            </a>
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.x32.Windows.exe"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Windows x32 (.exe)</span>
+                <span class="text-[10px] text-slate-500">Legacy / 32-bit</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">4.11 MB</span>
+            </a>
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.Portable.Windows.rar"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Portable (.rar)</span>
+                <span class="text-[10px] text-slate-500">Sin instalador</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">8.02 MB</span>
+            </a>
+          </div>
+        </div>
+
         <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/40 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-800 px-6 py-4 rounded-xl font-mono font-bold uppercase tracking-wider transition text-slate-800 dark:text-slate-200">
-          <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-500"></i> Preguntas Frecuentes
+          <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-500"></i> Ayuda
         </a>
       </div>
 
-      <!-- Métricas / Puntos Rápidos con tipografía limpia -->
+      <!-- Métricas / Puntos Rápidos -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
         
         <div class="aluminum-card p-5 rounded-2xl">
@@ -231,7 +270,7 @@
           <span class="block text-lg font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
             <i class="fa-solid fa-shield text-blue-600 dark:text-blue-400 mr-1.5 text-sm"></i> 0 Servidores
           </span>
-          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Privacidad total en tu móvil</span>
+          <span class="text-xs text-slate-600 dark:text-slate-400 block font-medium">Privacidad total en tu equipo</span>
         </div>
 
         <div class="aluminum-card p-5 rounded-2xl">
@@ -268,7 +307,7 @@
               Multicuenta Instantáneo
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Agrega todas tus cuentas de Epic Games. Alterna entre ellas con un solo toque desde la barra superior sin tener que cerrar e iniciar sesión.
+              Agrega todas tus cuentas de Epic Games. Alterna entre ellas con un solo toque desde la interfaz sin tener que cerrar e iniciar sesión.
             </p>
           </div>
           <div class="mt-8 pt-4 border-t border-black/5 dark:border-white/5 mono text-[11px] text-slate-500 font-semibold">
@@ -286,7 +325,7 @@
               Canje en 2 Toques
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Abre directo la pasarela de compra de costo $0 con tu sesión pre-cargada. Confirma el pedido y márcalo en la barra integrada con un toque.
+              Abre directo la pasarela de compra de costo $0 con tu sesión pre-cargada. Confirma el pedido y márcalo en el historial integrado con un toque.
             </p>
           </div>
           <div class="mt-8 pt-4 border-t border-black/5 dark:border-white/5 mono text-[11px] text-slate-500 font-semibold">
@@ -324,22 +363,23 @@
     </section>
 
     <!-- Apoyo Ko-Fi -->
-<section class="max-w-4xl mx-auto px-6 pb-16">
-  <div class="aluminum-card p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-    <div>
-      <span class="mono text-[11px] uppercase tracking-widest text-orange-600 dark:text-orange-500 font-bold block mb-1">PROYECTO INDEPENDIENTE</span>
-      <h3 class="font-display text-2xl font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
-        ¿Te resulta útil el proyecto?
-      </h3>
-      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-lg">
-        Epic-Claim es un proyecto personal y de código abierto. Si la aplicación te ahorra tiempo semana tras semana, puedes invitarme un café para apoyar el mantenimiento.
-      </p>
-    </div>
-    <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
-      <i class="fa-solid fa-mug-hot"></i> Apoyar en Ko-Fi
-    </a>
-  </div>
-</section>
+    <section class="max-w-4xl mx-auto px-6 pb-16">
+      <div class="aluminum-card p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <span class="mono text-[11px] uppercase tracking-widest text-orange-600 dark:text-orange-500 font-bold block mb-1">PROYECTO INDEPENDIENTE</span>
+          <h3 class="font-display text-2xl font-bold text-black dark:text-[#e6edf3] mb-1 tracking-tight">
+            ¿Te resulta útil el proyecto?
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-lg">
+            Epic-Claim es un proyecto personal y de código abierto. Si la aplicación te ahorra tiempo semana tras semana, puedes invitarme un café para apoyar el mantenimiento.
+          </p>
+        </div>
+        <a href="https://ko-fi.com/rogzca" target="_blank" class="shrink-0 flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
+          <i class="fa-solid fa-mug-hot"></i> Apoyar en Ko-Fi
+        </a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="border-t border-black/10 dark:border-white/10 py-10 text-xs mono text-slate-500 transition-colors duration-200">
@@ -360,7 +400,7 @@
     </div>
   </footer>
 
-  <!-- Scripts: Modo Oscuro + Menú Hamburguesa Móvil -->
+  <!-- Scripts: Modo Oscuro, Menú Hamburguesa & Desplegable Windows -->
   <script>
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
@@ -371,6 +411,9 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
+
+    const winBtn = document.getElementById('win-dropdown-btn');
+    const winMenu = document.getElementById('win-dropdown-menu');
 
     function updateIcons() {
       if (document.documentElement.classList.contains('dark')) {
@@ -402,6 +445,17 @@
         mobileMenu.classList.toggle('hidden');
         menuIconOpen.classList.toggle('hidden');
         menuIconClose.classList.toggle('hidden');
+      });
+    }
+
+    // Toggle para menú desplegable de Windows
+    if (winBtn && winMenu) {
+      winBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        winMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', () => {
+        winMenu.classList.add('hidden');
       });
     }
   </script>
