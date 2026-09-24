@@ -12,18 +12,18 @@
   🎮 Epic-Claim
 </h1>
 
-### Claim your free Epic Games on Android in 2 or 3 taps
+### Claim your free Epic Games on Android & Windows in seconds
 
-[![Release](https://img.shields.io/github/v/release/RogzcaMX/Epic-Claim?color=6366f1&style=for-the-badge&logo=android)](https://github.com/RogzcaMX/Epic-Claim/releases)
+[![Release](https://img.shields.io/github/v/release/RogzcaMX/Epic-Claim?color=6366f1&style=for-the-badge&logo=github)](https://github.com/RogzcaMX/Epic-Claim/releases)
 [![License](https://img.shields.io/badge/License-Open%20Source-emerald?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Android-blue?style=for-the-badge&logo=android)](https://www.android.com/)
+[![Platform](https://img.shields.io/badge/Platform-Android%20|%20Windows-blue?style=for-the-badge&logo=windows)](https://github.com/RogzcaMX/Epic-Claim/releases)
 [![Ko-Fi](https://img.shields.io/badge/Ko--Fi-Buy%20a%20Coffee-ff5e5b?style=for-the-badge&logo=kofi)](https://ko-fi.com/rogzca)
 
 <p align="center">
-  <b>Epic-Claim</b> was created for those of us too lazy to turn on the PC or open a browser every week just to claim Epic Games giveaways. Specially designed if you manage multiple accounts and hate constantly logging in and out.
+  <b>Epic-Claim</b> is a lightweight, cross-platform tool designed to claim weekly Epic Games giveaways instantly. Specially crafted if you manage multiple accounts and want to skip the tedious cycle of repeatedly logging in and out.
 </p>
 
-[Download APK (Latest Version)](https://github.com/RogzcaMX/Epic-Claim/releases) • [Website](https://rogzcamx.github.io/Epic-Claim/) • [FAQ](#-frequently-asked-questions)
+[Download Latest Version](https://github.com/RogzcaMX/Epic-Claim/releases) • [Website](https://rogzcamx.github.io/Epic-Claim/) • [FAQ](#-frequently-asked-questions)
 
 </div>
 
@@ -31,31 +31,39 @@
 
 ## ✨ Key Features
 
-- 👥 **Unlimited Multi-Account Support:** Link as many accounts as you want and switch between them with a single tap from the top bar.
-- ⚡ **Fast Assisted Claiming:** Opens the $0 checkout directly with your session injected via cookies. Just confirm and mark the claim.
-- 📦 **"In Library" Badge:** Instantly see if the active account already claimed the current title so you don't waste time or mobile data.
+- 👥 **Unlimited Multi-Account Support:** Link as many accounts as you want and switch between them with a single tap/click from the top bar.
+- ⚡ **Fast Assisted Claiming:** Opens the $0 checkout page directly with your session injected via cookies. Confirm the order and log your claim.
+- 📦 **"In Library" Badge:** Instantly see if the active account already claimed the current title so you don't waste time or network data.
 - 📜 **Independent History per Account:** Each profile keeps its own claimed games log with date, time, and real-time search.
-- 🔔 **Background Alerts:** Automated notifications powered by `WorkManager`. Schedule them for the weekly Epic reset (Thursdays 15:00 UTC), every 24 hours, or set your custom time.
-- 🔒 **100% Private & Local:** No external servers or cloud databases. Your sessions are stored locally and encrypted on your device using `EncryptedSharedPreferences` (AES-256).
-- 🎨 **Full Customization:** Light theme, manual dark mode, follow system, or schedule by time. English and Spanish support.
+- 🔔 **Background Alerts:** Automated checkups and notifications for the weekly Epic reset (Thursdays 15:00 UTC), every 24 hours, or at custom intervals.
+- 🔒 **100% Private & Local:** No external servers, analytics, or remote databases. Your sessions are stored locally and encrypted using AES-256.
+- 🎨 **Full Customization:** Responsive UI for mobile and desktop, comprehensive Dark Theme support, and dynamic language switching (English & Spanish).
 
 ---
 
-## 📱 How does the claiming process work?
+## 🚀 How does the claiming process work?
 
-1. **Add your account:** Sign in once using the integrated secure webview to store your session cookies.
-2. **Check weekly games:** The app fetches the catalog directly from Epic Games Store's official promotions API.
-3. **Claim in 2 taps:** Tap **Claim**, and the app takes you straight to the $0 checkout page with your session active. Confirm the order on Epic Games and tap the green checkmark (✓) to log it into your history.
-4. **Switch:** Switch to your next account from the top menu and repeat within seconds.
+1. **Add your account:** Sign in once using the integrated secure web view to register your session cookies.
+2. **Check active games:** The app fetches the catalog directly from the official Epic Games Store promotions API.
+3. **Claim quickly:** Click/tap **Claim**, and the app navigates directly to the $0 checkout page with your session preloaded. Confirm the order on Epic Games and tap the confirmation mark (✓) to log it into your history.
+4. **Switch:** Change to your next account from the top bar and repeat within seconds without retyping credentials.
 
 ---
 
 ## 📥 Download & Installation
 
-1. Go to the [GitHub Releases](https://github.com/RogzcaMX/Epic-Claim/releases) section.
-2. Download the `.apk` file for the latest release (e.g., `Epic-Claim.v1.0.Archikos.apk`).
-3. Open the file on your Android device and allow installations from unknown sources if prompted.
-4. You're ready to go! Start linking your accounts.
+Head over to the [GitHub Releases](https://github.com/RogzcaMX/Epic-Claim/releases) section and download the package matching your operating system:
+
+### 📱 Android
+1. Download the latest `.apk` package (e.g., `Epic-Claim.v1.0.Archikos.apk`)[cite: 1].
+2. Open the file on your device and grant installation permissions from unknown sources if requested by your system.
+3. Launch the app and link your accounts.
+
+### 💻 Windows
+Select the preferred distribution from the **Assets** section[cite: 1]:
+* **64-bit Installer (Recommended):** `Epic-Claim.v1.0.Archikos x64 Windows.exe`[cite: 2]
+* **32-bit Installer:** `Epic-Claim.v1.0.Archikos x32 Windows.exe`[cite: 2]
+* **Portable Version:** `Epic-Claim.v1.0.Archikos Portable Windows.rar` *(extract the archive and run the executable directly without installation)*[cite: 2].
 
 ---
 
@@ -64,19 +72,19 @@
 <details>
 <summary><b>Why doesn't the app fully automate the claiming process?</b></summary>
 <br>
-Epic Games uses anti-bot protections (hCaptcha) and payment gateways requiring human interaction to prevent automated abuse. Epic-Claim bypasses all tedious navigation and injects your session so you only have to confirm the final order.
+Epic Games implements anti-bot mechanisms (hCaptcha) and purchase flows that require user interaction to prevent automated abuse. Epic-Claim eliminates the tedious store navigation and injects your session so you only need to confirm the final order.
 </details>
 
 <details>
 <summary><b>Can the developer view my passwords or accounts?</b></summary>
 <br>
-No. The application has no intermediary servers, databases, or connection with the developer. Authentication happens directly with Epic Games servers, and cookies are stored solely within your device's encrypted storage.
+No. The application has no intermediary servers, tracking, or remote communication with the developer. Authentication happens directly with Epic Games servers, and tokens/cookies remain solely within your local encrypted device storage.
 </details>
 
 <details>
 <summary><b>Why does it ask me to renew my session after a few days?</b></summary>
 <br>
-Epic Games invalidates tokens and session cookies periodically for security reasons. When this happens, simply tap <i>Restart Account Session</i> in the account menu to refresh your credentials without losing your claim history.
+Epic Games periodically invalidates session tokens for security purposes. When this occurs, simply select <i>Restart Account Session</i> in the account options menu to refresh your credentials without losing your claimed games history.
 </details>
 
 ---
