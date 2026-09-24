@@ -55,15 +55,15 @@
 Dirígete a la sección de [Releases de GitHub](https://github.com/RogzcaMX/Epic-Claim/releases) y descarga el archivo correspondiente a tu sistema operativo:
 
 ### 📱 Android
-1. Descarga el paquete `.apk` más reciente (ej. `Epic-Claim.v1.0.Archikos.apk`)[cite: 1].
+1. Descarga el paquete `.apk` más reciente (ej. `Epic-Claim.v1.0.Archikos.apk`).
 2. Abre el archivo en tu dispositivo y concede permisos de instalación desde orígenes desconocidos si el sistema lo requiere.
 3. Inicia la app y vincula tus perfiles.
 
 ### 💻 Windows
-Elige la versión adecuada desde los binarios adjuntos (*Assets*)[cite: 1]:
-* **Instalador de 64 bits (Recomendado):** `Epic-Claim.v1.0.Archikos x64 Windows.exe`[cite: 2]
-* **Instalador de 32 bits:** `Epic-Claim.v1.0.Archikos x32 Windows.exe`[cite: 2]
-* **Versión Portable:** `Epic-Claim.v1.0.Archikos Portable Windows.rar` *(descomprime la carpeta y ejecuta directamente la aplicación sin necesidad de instalación)*[cite: 2].
+Elige la versión adecuada desde los binarios adjuntos (*Assets*):
+* **Instalador de 64 bits (Recomendado):** `Epic-Claim.v1.0.Archikos x64 Windows.exe
+* **Instalador de 32 bits:** `Epic-Claim.v1.0.Archikos x32 Windows.exe
+* **Versión Portable:** `Epic-Claim.v1.0.Archikos Portable Windows.rar` *(descomprime la carpeta y ejecuta directamente la aplicación sin necesidad de instalación)*.
 
 ---
 
