@@ -12,11 +12,11 @@
   🎮 Epic-Claim
 </h1>
 
-### Reclama tus juegos gratis de Epic Games en Android y Windows en cuestión de segundos
+### Reclama tus juegos gratis de Epic Games en Android, Windows y Linux en cuestión de segundos
 
 [![Release](https://img.shields.io/github/v/release/RogzcaMX/Epic-Claim?color=6366f1&style=for-the-badge&logo=github)](https://github.com/RogzcaMX/Epic-Claim/releases)
 [![License](https://img.shields.io/badge/License-Open%20Source-emerald?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Android%20|%20Windows-blue?style=for-the-badge&logo=windows)](https://github.com/RogzcaMX/Epic-Claim/releases)
+[![Platform](https://img.shields.io/badge/Platform-Android%20|%20Windows%20|%20Linux-blue?style=for-the-badge&logo=linux)](https://github.com/RogzcaMX/Epic-Claim/releases)
 [![Ko-Fi](https://img.shields.io/badge/Ko--Fi-Buy%20a%20Coffee-ff5e5b?style=for-the-badge&logo=kofi)](https://ko-fi.com/rogzca)
 
 <p align="center">
@@ -61,9 +61,15 @@ Dirígete a la sección de [Releases de GitHub](https://github.com/RogzcaMX/Epic
 
 ### 💻 Windows
 Elige la versión adecuada desde los binarios adjuntos (*Assets*):
-* **Instalador de 64 bits (Recomendado):** `Epic-Claim.v1.0.Archikos x64 Windows.exe
-* **Instalador de 32 bits:** `Epic-Claim.v1.0.Archikos x32 Windows.exe
-* **Versión Portable:** `Epic-Claim.v1.0.Archikos Portable Windows.rar` *(descomprime la carpeta y ejecuta directamente la aplicación sin necesidad de instalación)*.
+* **Instalador de 64 bits (Recomendado):** `Epic-Claim.v1.0.Archikos.x64.Windows.exe`
+* **Instalador de 32 bits:** `Epic-Claim.v1.0.Archikos.x32.Windows.exe`
+* **Versión Portable:** `Epic-Claim.v1.0.Archikos.Portable.Windows.rar` *(descomprime la carpeta y ejecuta directamente la aplicación sin necesidad de instalación)*.
+
+### 🐧 Linux
+Descarga el formato correspondiente a tu distribución:
+* **Paquete Debian / Ubuntu / Mint (.deb):** `Epic-Claim.v1.0.Archikos.amd64.Linux.deb`
+* **Paquete Fedora / RHEL / openSUSE (.rpm):** `Epic-Claim.v1.0.Archikos.x86_64.Linux.rpm`
+* **Universal (AppImage):** `Epic-Claim.v1.0.Archikos.Linux.Universal.AppImage` *(asigna permisos de ejecución mediante `chmod +x` y ejecuta directamente)*.
 
 ---
 
