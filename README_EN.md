@@ -55,21 +55,21 @@
 Head over to the [GitHub Releases](https://github.com/RogzcaMX/Epic-Claim/releases) section and download the package matching your operating system:
 
 ### 📱 Android
-1. Download the latest `.apk` package (e.g., `Epic-Claim.v1.0.Archikos.apk`)[cite: 2].
+1. Download the latest `.apk` package (e.g., `Epic-Claim.v1.0.Archikos.apk`).
 2. Open the file on your device and grant installation permissions from unknown sources if requested by your system.
 3. Launch the app and link your accounts.
 
 ### 💻 Windows
 Select the preferred distribution from the **Assets** section:
-* **64-bit Installer (Recommended):** `Epic-Claim.v1.0.Archikos.x64.Windows.exe`[cite: 2]
-* **32-bit Installer:** `Epic-Claim.v1.0.Archikos.x32.Windows.exe`[cite: 2]
-* **Portable Version:** `Epic-Claim.v1.0.Archikos.Portable.Windows.rar` *(extract the archive and run the executable directly without installation)*[cite: 2].
+* **64-bit Installer (Recommended):** `Epic-Claim.v1.0.Archikos.x64.Windows.exe`
+* **32-bit Installer:** `Epic-Claim.v1.0.Archikos.x32.Windows.exe`
+* **Portable Version:** `Epic-Claim.v1.0.Archikos.Portable.Windows.rar` *(extract the archive and run the executable directly without installation)*.
 
 ### 🐧 Linux
 Download the package compatible with your distribution:
-* **Debian / Ubuntu / Mint (.deb):** `Epic-Claim.v1.0.Archikos.amd64.Linux.deb`[cite: 2]
-* **Fedora / RHEL / openSUSE (.rpm):** `Epic-Claim.v1.0.Archikos.x86_64.Linux.rpm`[cite: 2]
-* **Universal (AppImage):** `Epic-Claim.v1.0.Archikos.Linux.Universal.AppImage` *(grant execution permissions with `chmod +x` and run directly)*[cite: 2].
+* **Debian / Ubuntu / Mint (.deb):** `Epic-Claim.v1.0.Archikos.amd64.Linux.deb`
+* **Fedora / RHEL / openSUSE (.rpm):** `Epic-Claim.v1.0.Archikos.x86_64.Linux.rpm`
+* **Universal (AppImage):** `Epic-Claim.v1.0.Archikos.Linux.Universal.AppImage` *(grant execution permissions with `chmod +x` and run directly)*.
 
 ---
 
