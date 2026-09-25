@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epic-Claim | Claim your Epic Games freebies on Android & Windows</title>
-  <meta name="description" content="Claim weekly free games from Epic Games in seconds directly on your Android or Windows device. Instant multi-account support, encrypted history, and Thursday reset reminders.">
+  <title>Epic-Claim | Claim your Epic Games freebies on Android, Windows & Linux</title>
+  <meta name="description" content="Claim weekly free games from Epic Games in seconds directly on your Android, Windows, or Linux device. Instant multi-account support, encrypted history, and Thursday reset reminders.">
   
   <!-- Favicon with logo -->
   <link rel="icon" type="image/jpeg" href="https://i.ibb.co/VchdQ5dQ/app-logo.jpg">
@@ -185,7 +185,7 @@
       <!-- Release Badge -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/15 dark:border-white/15 bg-white/50 dark:bg-black/40 backdrop-blur-md text-slate-800 dark:text-slate-300 text-xs font-semibold mb-8 shadow-xs">
         <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
-        <span class="mono">Version 1.0 «Archikós» Available (Android & Windows)</span>
+        <span class="mono">Version 1.0 «Archikós» Available (Android, Windows & Linux)</span>
       </div>
 
       <!-- Hero Heading -->
@@ -194,16 +194,16 @@
       </h1>
 
       <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-        Built for players managing multiple accounts who hate constantly logging in and out. Browse active titles, switch profiles seamlessly, and claim games fast straight from your Android device or Windows PC.
+        Built for players managing multiple accounts who hate constantly logging in and out. Browse active titles, switch profiles seamlessly, and claim games fast straight from your Android device, Windows PC, or Linux system.
       </p>
 
-      <!-- Action Buttons (Android + Windows Dropdown + Help) -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mb-16 relative">
+      <!-- Action Buttons (Android + Windows Dropdown + Linux Dropdown + Help) -->
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center max-w-3xl mx-auto mb-16 relative">
         
         <!-- Android Download Button -->
         <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.apk"
            download="Epic-Claim.v1.0.Archikos.apk"
-           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
+           class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md">
           <i class="fa-brands fa-android text-base"></i>
           <span>Android APK (14.1 MB)</span>
         </a>
@@ -211,16 +211,16 @@
         <!-- Windows Dropdown Container -->
         <div class="relative w-full sm:w-auto text-left" id="windows-dropdown-container">
           <button type="button" id="win-dropdown-btn"
-                  class="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-7 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md cursor-pointer">
+                  class="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md cursor-pointer">
             <div class="flex items-center gap-2">
               <i class="fa-brands fa-windows text-base"></i>
-              <span>Windows 10/11 ▾</span>
+              <span>Windows ▾</span>
             </div>
-            <i class="fa-solid fa-chevron-down text-[10px] sm:ml-2"></i>
+            <i class="fa-solid fa-chevron-down text-[10px] sm:ml-1"></i>
           </button>
 
           <!-- Floating Windows Dropdown Menu -->
-          <div id="win-dropdown-menu" class="hidden sm:absolute sm:right-0 mt-2 w-full sm:w-72 aluminum-card rounded-2xl p-2 shadow-2xl z-50 flex flex-col gap-1 text-xs">
+          <div id="win-dropdown-menu" class="hidden sm:absolute sm:left-0 mt-2 w-full sm:w-72 aluminum-card rounded-2xl p-2 shadow-2xl z-50 flex flex-col gap-1 text-xs">
             <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.x64.Windows.exe"
                class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
               <div>
@@ -248,8 +248,48 @@
           </div>
         </div>
 
-        <!-- Help Button (Dark/Black style restored) -->
-        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/80 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-900 px-7 py-4 rounded-xl font-mono font-bold uppercase tracking-wider transition text-slate-800 dark:text-slate-200 shadow-md">
+        <!-- Linux Dropdown Container -->
+        <div class="relative w-full sm:w-auto text-left" id="linux-dropdown-container">
+          <button type="button" id="linux-dropdown-btn"
+                  class="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-3 bg-black text-white dark:bg-zinc-200 dark:text-black hover:bg-slate-800 dark:hover:bg-white px-6 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider transition shadow-md cursor-pointer">
+            <div class="flex items-center gap-2">
+              <i class="fa-brands fa-linux text-base"></i>
+              <span>Linux ▾</span>
+            </div>
+            <i class="fa-solid fa-chevron-down text-[10px] sm:ml-1"></i>
+          </button>
+
+          <!-- Floating Linux Dropdown Menu -->
+          <div id="linux-dropdown-menu" class="hidden sm:absolute sm:left-0 mt-2 w-full sm:w-72 aluminum-card rounded-2xl p-2 shadow-2xl z-50 flex flex-col gap-1 text-xs">
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.Linux.Universal.AppImage"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Universal (.AppImage)</span>
+                <span class="text-[10px] text-slate-500">All Linux distributions</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">82.2 MB</span>
+            </a>
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.amd64.Linux.deb"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Debian / Ubuntu (.deb)</span>
+                <span class="text-[10px] text-slate-500">Ubuntu, Mint, Debian</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">5.57 MB</span>
+            </a>
+            <a href="https://github.com/RogzcaMX/Epic-Claim/releases/download/v1.0/Epic-Claim.v1.0.Archikos.x86_64.Linux.rpm"
+               class="px-3.5 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex justify-between items-center transition">
+              <div>
+                <span class="block font-bold text-black dark:text-white">Fedora / RHEL (.rpm)</span>
+                <span class="text-[10px] text-slate-500">Fedora, openSUSE, RHEL</span>
+              </div>
+              <span class="mono text-[10px] text-slate-400">5.57 MB</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Help Button -->
+        <a href="faq.html" class="w-full sm:w-auto flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 bg-white/50 dark:bg-black/80 backdrop-blur-md hover:bg-white dark:hover:bg-zinc-900 px-6 py-4 rounded-xl font-mono font-bold uppercase tracking-wider transition text-slate-800 dark:text-slate-200 shadow-md">
           <i class="fa-solid fa-circle-question text-orange-600 dark:text-orange-500"></i> Help
         </a>
       </div>
@@ -405,7 +445,7 @@
     </div>
   </footer>
 
-  <!-- Theme Script -->
+  <!-- Theme Script & Dropdowns -->
   <script>
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
@@ -419,6 +459,9 @@
 
     const winBtn = document.getElementById('win-dropdown-btn');
     const winMenu = document.getElementById('win-dropdown-menu');
+
+    const linuxBtn = document.getElementById('linux-dropdown-btn');
+    const linuxMenu = document.getElementById('linux-dropdown-menu');
 
     function updateIcons() {
       if (document.documentElement.classList.contains('dark')) {
@@ -457,12 +500,25 @@
     if (winBtn && winMenu) {
       winBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        if (linuxMenu) linuxMenu.classList.add('hidden');
         winMenu.classList.toggle('hidden');
       });
-      document.addEventListener('click', () => {
-        winMenu.classList.add('hidden');
+    }
+
+    // Toggle for Linux dropdown menu
+    if (linuxBtn && linuxMenu) {
+      linuxBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (winMenu) winMenu.classList.add('hidden');
+        linuxMenu.classList.toggle('hidden');
       });
     }
+
+    // Close both dropdowns when clicking outside
+    document.addEventListener('click', () => {
+      if (winMenu) winMenu.classList.add('hidden');
+      if (linuxMenu) linuxMenu.classList.add('hidden');
+    });
   </script>
 
 </body>
